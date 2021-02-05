@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backGroundShadow"
+    tools:context=".messages_activities.MessagesActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_activityMessages"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:elevation="2dp"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_back" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/actionButton_activityMessages"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="35dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_addd" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recylclerView_activityMessages"
+        android:layout_width="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_activityMessages" />
+
+    <ImageView
+        android:id="@+id/hideThisImageView_activityMessages"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:alpha=".3"
+        app:layout_constraintBottom_toBottomOf="@+id/recylclerView_activityMessages"
+        app:layout_constraintEnd_toEndOf="@+id/recylclerView_activityMessages"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_activityMessages"
+        app:srcCompat="@drawable/ic_message" />
+
+    <TextView
+        android:id="@+id/hideThisTextView_activityMessages"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha=".3"
+        android:text="No messages"
+        app:layout_constraintBottom_toBottomOf="@+id/hideThisImageView_activityMessages"
+        app:layout_constraintEnd_toEndOf="@+id/hideThisImageView_activityMessages"
+        app:layout_constraintStart_toStartOf="@+id/hideThisImageView_activityMessages"
+        app:layout_constraintTop_toBottomOf="@+id/hideThisImageView_activityMessages" />
+</androidx.constraintlayout.widget.ConstraintLayout>

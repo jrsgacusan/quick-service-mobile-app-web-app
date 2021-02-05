@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/Seller_servicesPage"
+        android:title=""
+        android:icon="@drawable/ic_services"
+        > </item>
+
+    <item
+        android:id="@+id/Seller_manageOrdersPage"
+        android:title=""
+        android:icon="@drawable/ic_manage_orders"
+        ></item>
+
+    <item
+        android:id="@+id/Seller_notificationsPage"
+        android:title=""
+        android:visible="false"
+        android:icon="@drawable/ic_baseline_notifications_24"
+
+        />
+
+    <item
+        android:id="@+id/Seller_profilePage"
+        android:title=""
+        android:icon="@drawable/ic_baseline_face_24"
+        
+        />
+
+</menu>

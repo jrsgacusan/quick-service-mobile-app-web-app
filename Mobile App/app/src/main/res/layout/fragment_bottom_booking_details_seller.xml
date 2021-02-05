@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="20dp"
+    tools:context=".seller_manage_order_fragments.BottomFragmentSellerOrderDetails">
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="BOOKING DETAILS"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/date_fragmentBottomBookingDetailsSeller"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_calendar"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center|left"
+        android:text="Date"
+        app:layout_constraintEnd_toStartOf="@+id/time_fragmentBottomBookingDetailsSeller"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/time_fragmentBottomBookingDetailsSeller"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_time"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center|left"
+        android:text="Time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/date_fragmentBottomBookingDetailsSeller"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/address_fragmentBottomBookingDetailsSeller"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_location"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center|left"
+        android:text="Address:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date_fragmentBottomBookingDetailsSeller" />
+
+    <TextView
+        android:id="@+id/price_fragmentBottomBookingDetailsSelle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_money"
+        android:gravity="center|left"
+        android:text="Price:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/address_fragmentBottomBookingDetailsSeller" />
+
+    <TextView
+        android:id="@+id/name_fragmentBottomBookingDetailsSeller"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_id"
+        android:gravity="center|left"
+        android:text="Name:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/price_fragmentBottomBookingDetailsSelle" />
+
+    <TextView
+        android:id="@+id/number_fragmentBottomBookingDetailsSeller"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_contact_number"
+        android:gravity="center|left"
+        android:text="Contact Number:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name_fragmentBottomBookingDetailsSeller" />
+
+    <TextView
+        android:id="@+id/category_fragmentBottomBookingDetailsSeller"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_category"
+        android:gravity="center|left"
+        android:text="Category:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/number_fragmentBottomBookingDetailsSeller" />
+
+    <TextView
+        android:id="@+id/title_fragmentBottomBookingDetailsSeller"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_title"
+        android:gravity="center|left"
+        android:text="Title:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/category_fragmentBottomBookingDetailsSeller" />
+
+    <TextView
+        android:id="@+id/description_fragmentBottomBookingDetailsSeller"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_description"
+        android:gravity="center|left"
+        android:text="Description:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_fragmentBottomBookingDetailsSeller" />
+
+    <Button
+        android:id="@+id/button_fragmentBottomBookingDetailsSeller"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_buttons_seller"
+        android:text="CONTACT BUYER"
+        android:textColor="#F3EAEA"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mode_fragmentBottomBookingDetailsSeller" />
+
+    <Button
+        android:id="@+id/marButton_fragmentBottomBookingDetailsSeller"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/rounded_buttons_seller"
+        android:text="ACCEPT OR DECLINE"
+        android:textColor="#F3EAEA"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_fragmentBottomBookingDetailsSeller" />
+
+    <TextView
+        android:id="@+id/dandt_fragmentBottomBookingDetailsSeller"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_calendar"
+        android:gravity="center|left"
+        android:text="Date and Time Booked:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/description_fragmentBottomBookingDetailsSeller" />
+
+    <TextView
+        android:id="@+id/mode_fragmentBottomBookingDetailsSeller"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_mode"
+        android:gravity="center|left"
+        android:text="Mode of Payment:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dandt_fragmentBottomBookingDetailsSeller" />
+
+    <Button
+        android:id="@+id/complete_fragmentBottomBookingDetailsSeller"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/rounded_buttons_seller"
+        android:text="CONFIRM BOOKING"
+        android:textColor="#FDFDFD"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/marButton_fragmentBottomBookingDetailsSeller" />
+</androidx.constraintlayout.widget.ConstraintLayout>

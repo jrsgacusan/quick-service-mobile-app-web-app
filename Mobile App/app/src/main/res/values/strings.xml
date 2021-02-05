@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">Quick-S</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string-array name="services_category">
+        <item>Computer Repair</item>
+        <item>Home Cleaning</item>
+        <item>Plumbing</item>
+        <item>Electrical</item>
+        <item>Moving</item>
+        <item>Delivery</item>
+        <item>Aircon</item>
+        <item>Home Repair</item>
+        <item>Auto Repair</item>
+    </string-array>
+
+    <string-array name="educationStatus">
+        <item>Primary School Graduate</item>
+        <item>Secondary School Graduate</item>
+        <item>High School Graduate</item>
+        <item>University Graduate</item>
+        <item>Postgraduate</item>
+        <item>On going</item>
+    </string-array>
+
+    <string-array name="skillLevel">
+        <item>Beginner</item>
+        <item>Intermediate</item>
+        <item>Expert</item>
+    </string-array>
+
+    <string-array name="modeOfPayment">
+        <item>Cash</item>
+        <item>Mobile Payments</item>
+        <item>Electronic Bank Transfers</item>
+    </string-array>
+
+
+</resources>

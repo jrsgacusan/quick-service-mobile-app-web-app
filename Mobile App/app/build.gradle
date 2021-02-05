@@ -1,0 +1,109 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'com.google.gms.google-services'
+    id 'kotlin-android-extensions'
+}
+
+androidExtensions{
+    experimental = true
+}
+
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
+
+    defaultConfig {
+        applicationId "com.example.capstoneProject"
+        minSdkVersion 23
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.3.2'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.annotation:annotation:1.1.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
+    implementation 'androidx.navigation:navigation-fragment:2.2.2'
+    implementation 'androidx.navigation:navigation-ui:2.2.2'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.2.2'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.2.2'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.firebase:firebase-auth:20.0.1'
+    implementation 'com.google.firebase:firebase-storage:19.2.0'
+    implementation 'com.google.firebase:firebase-database:19.5.1'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation 'com.google.android.material:material:1.1.0'
+    //navigation controller
+    def nav_version_ktx = "2.1.0-alpha06"
+    // Kotlin
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version_ktx"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version_ktx"
+    //groupie and picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation "com.xwray:groupie:2.1.0"
+    //Circle image view
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
+    //Bottom fragment sheeet
+    implementation 'com.google.android.material:material:1.1.0'
+    //View pager
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
+    implementation 'com.github.denzcoskun:ImageSlideshow:0.1.0'
+    //design library
+    implementation 'com.google.android.material:material:1.2.0-alpha03'
+    //Pinch zoom, I think this is unused
+    implementation 'com.jsibbold:zoomage:1.3.1'
+    //Dependencies for Image View. If an image view is clicked, it will show the image
+    implementation 'com.github.hsmnzaydn:imagezoom:1.3.0'
+    //Simple image popup. Used together with the slider
+    implementation 'com.github.chathuralakmal:AndroidImagePopup:1.2.2'
+    //image cropper
+    api 'com.theartofdev.edmodo:android-image-cropper:2.8.+'
+    //notification builder
+    implementation "io.karn:notify:1.3.0"
+    //Work manager
+    def work_version = "2.4.0"
+    implementation "androidx.work:work-runtime-ktx:$work_version"
+    //Google pay api
+    implementation 'com.google.android.gms:play-services-wallet:18.1.1'
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

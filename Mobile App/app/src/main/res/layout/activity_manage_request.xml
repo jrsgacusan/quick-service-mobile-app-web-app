@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backGroundShadow"
+    tools:context=".buyer_activities.ManageRequestActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolBar_activityManageRequest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="2dp"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ListView
+        android:id="@+id/requestListView_activityManageRequest"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolBar_activityManageRequest" >
+
+    </ListView>
+
+    <ImageView
+        android:id="@+id/hideThisImageView_activityManageRequest"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:alpha=".3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolBar_activityManageRequest"
+        app:srcCompat="@drawable/ic_manage_requests_s" />
+
+    <TextView
+        android:id="@+id/hideThisTextView_activityManageRequest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha=".3"
+        android:text="No request created. Create one?"
+        app:layout_constraintBottom_toBottomOf="@+id/hideThisImageView_activityManageRequest"
+        app:layout_constraintEnd_toEndOf="@+id/hideThisImageView_activityManageRequest"
+        app:layout_constraintStart_toStartOf="@+id/hideThisImageView_activityManageRequest"
+        app:layout_constraintTop_toBottomOf="@+id/hideThisImageView_activityManageRequest" />
+
+    <TextView
+        android:id="@+id/clickHereTextView_activityManageRequest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="20dp"
+        android:text="CLICK HERE"
+        app:layout_constraintEnd_toEndOf="@+id/hideThisTextView_activityManageRequest"
+        app:layout_constraintStart_toStartOf="@+id/hideThisTextView_activityManageRequest"
+        app:layout_constraintTop_toBottomOf="@+id/hideThisTextView_activityManageRequest" />
+</androidx.constraintlayout.widget.ConstraintLayout>

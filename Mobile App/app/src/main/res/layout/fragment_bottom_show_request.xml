@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:padding="20dp"
+    tools:context=".seller_activities.BottomShowRequestFragment">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imageVIew_fragmentBottomShowRequest"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
+        android:scaleType="centerCrop"
+        app:circle="true"
+        app:layout_constraintCircleRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton_fragmentBottomShowRequest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:foregroundGravity="center"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_message"
+        app:backgroundTint="@color/anotherLightBlue"
+        app:layout_constraintBottom_toBottomOf="@+id/imageVIew_fragmentBottomShowRequest"
+        app:layout_constraintEnd_toEndOf="@+id/imageVIew_fragmentBottomShowRequest"
+        app:layout_constraintStart_toEndOf="@+id/imageVIew_fragmentBottomShowRequest"
+        app:layout_constraintTop_toBottomOf="@+id/imageVIew_fragmentBottomShowRequest" />
+
+    <TextView
+        android:id="@+id/textView_fragmentBottomShowRequest"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="The description text here"
+        android:textAlignment="gravity"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.902"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/floatingActionButton_fragmentBottomShowRequest" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

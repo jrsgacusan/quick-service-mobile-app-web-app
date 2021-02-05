@@ -1,0 +1,187 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,700&display=swap");
+.login-box {
+  font-family: 'Poppins';
+  position: relative;
+  background-color: white;
+  width: 759px;
+  height: auto;
+  margin: 0;
+  border-radius: 65px;
+  border-style: solid;
+  border-width: 1px;
+  padding: 10px;
+  border-color: #707070;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  top: 50%;
+  LEFT: 50%;
+}
+
+body {
+  font-family: 'Poppins';
+  background: #f2f2f2;
+}
+
+#logoImage {
+  display: block;
+  margin: auto;
+  width: 112px;
+  height: 150px;
+  padding: 5px;
+}
+
+.input-text {
+  outline: none;
+  font-family: 'Poppins';
+  width: 352px;
+  height: 53px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #707070;
+  border-radius: 35px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 20px;
+  margin: auto;
+  margin-bottom: 10px;
+  display: block;
+  text-align: left, center;
+}
+
+.input-text #email:hover {
+  background: yellow;
+}
+
+.button {
+  font-weight: bold;
+  color: white;
+  outline: none;
+  font-family: 'Poppins';
+  width: 372px;
+  height: 53px;
+  border-radius: 35px;
+  margin: auto;
+  display: block;
+  border-style: none;
+  margin-bottom: 10px;
+  background-color: #66e2c3;
+  font-size: 20px;
+}
+
+.button:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+/* The navbar container */
+#topnav {
+  overflow: hidden;
+  background-color: #333;
+  padding: auto;
+  font-family: 'Poppins';
+  font-size: 2em;
+  height: 40px;
+  vertical-align: middle;
+  padding: 1em;
+  width: auto;
+}
+
+#topnav .active {
+  font-weight: bold;
+}
+
+/* Navbar links */
+#topnav a {
+  color: #f2f2f2;
+  vertical-align: middle;
+  text-align: center;
+  text-decoration: none;
+  padding: 2em;
+}
+
+#signoutbutton {
+  font-size: 1em;
+  background-color: #333;
+  color: white;
+  border-radius: 20px;
+  border-style: solid;
+  border-color: white;
+  border-radius: 35px;
+  padding-left: 20px;
+  padding-right: 20px;
+  outline: none;
+}
+
+#topnav a:active {
+  background-color: #ddd;
+}
+
+/* Links - change color on hover */
+#inactive {
+  color: white;
+}
+
+table {
+  position: relative;
+  margin: auto;
+  font-family: "Poppins";
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table td {
+  padding: 20px;
+}
+
+table tr:hover {
+  background-color: #f2f2f2;
+}
+
+table tbody {
+  background-color: white;
+}
+
+table a {
+  text-decoration: none;
+}
+
+#verifybtn, #notnowbtn {
+  font-weight: bold;
+  color: white;
+  outline: none;
+  font-family: 'Poppins';
+  width: 100px;
+  height: 53px;
+  border-radius: 35px;
+  margin: 2px;
+  border-style: none;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+#verifybtn:hover, #notnowbtn:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+#verifybtn {
+  background-color: green;
+}
+
+#notnowbtn {
+  background-color: red;
+}
+
+.tableheader {
+  font-weight: bold;
+  font-size: larger;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tableheader :hover {
+  background-color: #f2f2f2;
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,16 @@
+<resources>
+    <string-array name="computerRepair">
+        <item>Fix my computer</item>
+        <item>Install software</item>
+        <item>Clean my computer</item>
+        <item>Trouble shoot problems with my gadgets</item>
+        <item>Assemble my computer</item>
+    </string-array>
+    <string-array name="homeCleaning">
+        <item>Clean our house</item>
+        <item>Clean our bathroom</item>
+        <item>Disinfect our home</item>
+        <item>Trouble shoot problems with my gadgets</item>
+        <item>Assemble my computer</item>
+    </string-array>
+</resources>

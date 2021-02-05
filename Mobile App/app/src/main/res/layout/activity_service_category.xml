@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".buyer_activities.ServiceCategoryActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolBar_activityServiceCategory"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:elevation="2dp"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton_activityServiceCategory"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_back" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/serviceRecyclerView_activityServiceCategory"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolBar_activityServiceCategory"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/hideThisImageView_activityServiceCategory"
+        android:layout_width="133dp"
+        android:layout_height="130dp"
+        android:alpha=".3"
+        android:background="#00BF0F0F"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_sad" />
+
+    <TextView
+        android:id="@+id/hideThisTextView_activityServiceCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha=".3"
+        android:text="No services found. Create a request?"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/hideThisImageView_activityServiceCategory"
+        app:layout_constraintEnd_toEndOf="@+id/hideThisImageView_activityServiceCategory"
+        app:layout_constraintStart_toStartOf="@+id/hideThisImageView_activityServiceCategory"
+        app:layout_constraintTop_toBottomOf="@+id/hideThisImageView_activityServiceCategory" />
+
+    <TextView
+        android:id="@+id/clickHereTextView_activityServiceCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="20dp"
+        android:text="CLICK HERE"
+        app:layout_constraintEnd_toEndOf="@+id/hideThisTextView_activityServiceCategory"
+        app:layout_constraintStart_toStartOf="@+id/hideThisTextView_activityServiceCategory"
+        app:layout_constraintTop_toBottomOf="@+id/hideThisTextView_activityServiceCategory" />
+
+    <ImageButton
+        android:id="@+id/imageButton_activityServiceCategory"
+        android:layout_width="60dp"
+        android:layout_height="0dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="@+id/toolBar_activityServiceCategory"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolBar_activityServiceCategory"
+        app:srcCompat="@drawable/ic_filter" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

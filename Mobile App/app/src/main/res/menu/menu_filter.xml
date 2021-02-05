@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/noFilter"
+        android:title="No Filter"
+        />
+    <item
+        android:id="@+id/descending"
+        android:title="Descending"
+        />
+    <item
+        android:id="@+id/ascending"
+        android:title="Ascending"
+        />
+
+    <item
+        android:id="@+id/rating"
+        android:title="Service Provider Rating"
+        >
+        <menu>
+            <item
+                android:id="@+id/low"
+                android:title="3.9⭐ and below"
+                />
+
+            <item
+                android:id="@+id/high"
+                android:title="4⭐ and above"
+                />
+        </menu>
+
+    </item>
+
+
+
+
+
+
+
+
+</menu>

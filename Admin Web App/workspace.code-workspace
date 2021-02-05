@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"name": "Quick-S Admin Interface",
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Quick-S Admin Interface"
+	}
+}

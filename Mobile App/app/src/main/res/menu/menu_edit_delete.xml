@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/delete"
+        android:title="Delete"
+        android:icon="@drawable/ic_delete"
+    />
+    <item
+        android:id="@+id/edit"
+        android:title="Edit"
+        android:icon="@drawable/ic_edit"
+        />
+    <item
+        android:id="@+id/pause"
+        android:title="Pause Service"
+        android:visible="false"
+        android:icon="@drawable/ic_pause"
+        />
+    <item
+        android:id="@+id/setAsActive"
+        android:title="Activate"
+        android:visible="false"
+        android:icon="@drawable/ic_activate"
+        />
+    <item android:id="@+id/preview"
+        android:title="Preview"
+        android:visible="false"
+        android:icon="@drawable/ic_preview"
+        />
+</menu>

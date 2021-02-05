@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="backGroundShadow">#f2f2f2</color>
+    <color name="lightBlue">#63E5C5</color>
+    <color name="darkBlue">#14366F</color>
+    <color name="none">#99000000</color>
+    <color name = "anotherLightBlue">#38A2D6</color>
+    <color name = "anotherDarkBlue">#551138</color>
+    <color name="black_alpha_40">#66000000</color>
+
+    <!--//Status cof the service colors -->
+    <color name="pause">#e5989b</color>
+    <color name="active">#006d77</color>
+    <color name="pending">#a5a58d</color>
+
+    <!--//Status of the orders -->
+    <color name="new_order">#00BCD4</color>
+    <color name="on_going_order">#FF9800</color>
+    <color name="complete_order">#4CAF50</color>FF8BC34A
+
+    <color name="done">#FF8BC34A</color>
+
+</resources>

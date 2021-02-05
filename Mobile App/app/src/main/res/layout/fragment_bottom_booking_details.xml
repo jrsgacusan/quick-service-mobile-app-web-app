@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".buyer_manage_order_fragments.BottomFragmentOrderDetails">
+
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:padding="20dp">
+
+      <TextView
+          android:id="@+id/date_orderDetails"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:drawableLeft="@drawable/ic_calendar"
+          android:gravity="center|left"
+          android:text="Date:"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/textView44" />
+
+      <TextView
+          android:id="@+id/time_orderDetails"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:drawableLeft="@drawable/ic_time"
+          android:gravity="center|left"
+          android:text="Time:"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/date_orderDetails" />
+
+      <TextView
+          android:id="@+id/price_orderDetails"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:drawableLeft="@drawable/ic_money"
+          android:gravity="center|left"
+          android:text="Price: ₱"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/address_fragmentBottomBookingDetails" />
+
+      <TextView
+          android:id="@+id/category_orderDetails"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:drawableLeft="@drawable/ic_category"
+          android:gravity="center|left"
+          android:text="Category:"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/price_orderDetails" />
+
+      <TextView
+          android:id="@+id/title_orderDetails"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:drawableLeft="@drawable/ic_title"
+          android:gravity="center|left"
+          android:text="Title:"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/category_orderDetails" />
+
+      <TextView
+          android:id="@+id/description_orderDetails"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:drawableLeft="@drawable/ic_description"
+          android:gravity="center|left"
+          android:text="Service Description:"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/title_orderDetails" />
+
+      <TextView
+          android:id="@+id/dateAndTimeOrdered_orderDetails"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:drawableLeft="@drawable/ic_calendar"
+          android:gravity="center|left"
+          android:text="Date and Time Ordered:"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/description_orderDetails" />
+
+      <TextView
+          android:id="@+id/textView44"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:fontFamily="sans-serif-medium"
+          android:text="BOOKING DETAILS"
+          android:textSize="18sp"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+
+      <Button
+          android:id="@+id/button_orderDetails"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:background="@drawable/rounded_buttons"
+          android:text="Message Service Provider"
+          android:textColor="#FFFFFF"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.6"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/mode_orderDetails" />
+
+      <TextView
+          android:id="@+id/number_orderDetails"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:drawableLeft="@drawable/ic_contact_number"
+          android:gravity="start|left"
+          android:text="Contact Number: "
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/dateAndTimeOrdered_orderDetails" />
+
+      <TextView
+          android:id="@+id/mode_orderDetails"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:drawableLeft="@drawable/ic_mode"
+          android:gravity="start|left"
+          android:text="Mode of Payment:"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.6"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/number_orderDetails" />
+
+      <Button
+          android:id="@+id/anotherButton_orderDetails"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="5dp"
+          android:background="@drawable/rounded_buttons"
+          android:text="Button"
+          android:textColor="#FFFFFF"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/button_orderDetails" />
+
+      <TextView
+          android:id="@+id/address_fragmentBottomBookingDetails"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:drawableLeft="@drawable/ic_location"
+          android:gravity="center|left"
+          android:text="Address:"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/time_orderDetails" />
+
+
+   </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
