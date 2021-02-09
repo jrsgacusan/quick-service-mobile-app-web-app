@@ -5,7 +5,6 @@
     <color name="backGroundShadow">#f2f2f2</color>
     <color name="lightBlue">#63E5C5</color>
     <color name="darkBlue">#14366F</color>
-    <color name="none">#99000000</color>
     <color name = "anotherLightBlue">#38A2D6</color>
     <color name = "anotherDarkBlue">#551138</color>
     <color name="black_alpha_40">#66000000</color>

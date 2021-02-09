@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/backGroundShadow"
     android:id="@+id/view_activityCreateServices"
-    tools:context=".ServiceProvider.seller_activities.CreateServicesActivity">
+    tools:context=".UserInterface.ServiceProvider.SellerActivities.CreateServicesActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -54,7 +54,6 @@
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
-                            android:id="@+id/textView14"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:justificationMode="inter_word"

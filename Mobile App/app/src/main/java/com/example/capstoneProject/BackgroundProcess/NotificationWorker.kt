@@ -10,8 +10,8 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import io.karn.notify.Notify
 
-class NotificationsWorker(appContext: Context, workerParams: WorkerParameters):
-    Worker(appContext, workerParams) {
+class NotificationsWorker(appContext: Context, workerParams: WorkerParameters) :
+        Worker(appContext, workerParams) {
 
     override fun doWork(): Result {
 
@@ -29,7 +29,7 @@ class NotificationsWorker(appContext: Context, workerParams: WorkerParameters):
 
                 try {
                     val count = snapshot.child(currentUser).value.toString().toInt()
-                    if(count > 0) {
+                    if (count > 0) {
                         Notify
                                 .with(applicationContext)
                                 .content { // this: Payload.Content.Default
@@ -39,16 +39,16 @@ class NotificationsWorker(appContext: Context, workerParams: WorkerParameters):
                                 .show()
                     }
                     notificationsRef.child(currentUser).setValue(0)
-                }catch (e: Exception) {
+                } catch (e: Exception) {
 
                 }
 
             }
+
             override fun onCancelled(error: DatabaseError) {
             }
         })
     }
-
 
 
 }

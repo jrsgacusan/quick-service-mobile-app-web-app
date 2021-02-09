@@ -14,7 +14,7 @@ class UserHandler {
         userRef = database.getReference("users")
     }
 
-    fun update(user: User):Boolean {
+    fun update(user: User): Boolean {
         userRef.child(user.uid!!).setValue(user)
         return true
     }

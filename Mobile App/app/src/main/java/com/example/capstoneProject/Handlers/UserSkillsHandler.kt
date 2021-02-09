@@ -15,7 +15,7 @@ class UserSkillsHandler {
         userSkillsRef = database.getReference("user_skills")
     }
 
-    fun createSkill(userSkills: UserSkills): Boolean{
+    fun createSkill(userSkills: UserSkills): Boolean {
         val id = userSkillsRef.push().key
         userSkills.uid = id
         userSkillsRef.child(id!!).setValue(userSkills)

@@ -1,7 +1,7 @@
 package com.example.capstoneProject.Models
 
 import android.os.Parcelable
-import com.example.capstoneProject.SignUpAcitivity
+import com.example.capstoneProject.UserInterface.General.SignUpAcitivity
 
 import com.google.firebase.database.IgnoreExtraProperties
 import kotlinx.android.parcel.Parcelize
@@ -18,8 +18,4 @@ class User(var uid: String? = "",
            var bio: String? = "",
            var verified: String? = "NOT_VERIFIED"
 
-): Parcelable  {
-
-
-
-}
+) : Parcelable

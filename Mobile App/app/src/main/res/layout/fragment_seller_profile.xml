@@ -5,13 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:stateListAnimator="@anim/nav_default_enter_anim"
-    tools:context=".Buyer.buyer_fragments.ProfileFragment">
+    tools:context=".UserInterface.Buyer.BuyerFragments.ProfileFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/alsdfsd"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/backGroundShadow">
@@ -95,7 +94,6 @@
             app:layout_constraintTop_toTopOf="@+id/seller_aboutMeCardView">
 
             <ImageView
-                android:id="@+id/postRequestImage"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
@@ -103,7 +101,6 @@
                 android:src="@drawable/ic_services" />
 
             <TextView
-                android:id="@+id/textView120"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|center"
@@ -129,7 +126,6 @@
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
 
             <ImageView
-                android:id="@+id/managerOrdersImage"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
@@ -137,7 +133,6 @@
                 android:src="@drawable/ic_about_me" />
 
             <TextView
-                android:id="@+id/textView10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|center"
@@ -160,7 +155,6 @@
             app:layout_constraintTop_toBottomOf="@+id/seller_aboutMeCardView">
 
             <ImageView
-                android:id="@+id/manageRequestImage"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
@@ -168,7 +162,6 @@
                 android:src="@drawable/ic_buyers_request" />
 
             <TextView
-                android:id="@+id/textView1202"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|center"

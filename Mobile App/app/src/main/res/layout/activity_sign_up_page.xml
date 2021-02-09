@@ -7,7 +7,7 @@
     android:background="@color/backGroundShadow"
     android:orientation="vertical"
     android:fillViewport="true"
-    tools:context=".SignUpAcitivity">
+    tools:context=".UserInterface.General.SignUpAcitivity">
 
     <LinearLayout
         android:layout_width="match_parent"

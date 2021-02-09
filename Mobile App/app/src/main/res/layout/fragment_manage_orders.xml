@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Buyer.buyer_manage_order_fragments.OrdersFragment">
+    tools:context=".UserInterface.Buyer.ManageOrderFragments.OrdersFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView_manage"

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Buyer.buyer_activities.ServiceCategoryActivity">
+    tools:context=".UserInterface.Buyer.BuyerActivities.ServiceCategoryActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolBar_activityServiceCategory"

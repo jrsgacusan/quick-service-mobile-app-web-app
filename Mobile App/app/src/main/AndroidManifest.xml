@@ -23,40 +23,40 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
-        <activity android:name=".Buyer.SendRequirementActivity" />
+        <activity android:name="com.example.capstoneProject.UserInterface.Buyer.SendRequirementActivity" />
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat" />
-        <activity android:name=".SplashScreenActivity">
+        <activity android:name="com.example.capstoneProject.UserInterface.General.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Messages.ChatLogActivity" />
-        <activity android:name=".Messages.CreateNewMessageActivity" />
-        <activity android:name=".Messages.MessagesActivity" />
-        <activity android:name=".DisplayReviewsActivity" />
-        <activity android:name=".Buyer.buyer_activities.DisplaySpecificServiceActivity" />
-        <activity android:name=".ServiceProvider.seller_activities.AboutMeAsSellerActivity" />
-        <activity android:name=".Buyer.buyer_activities.ServiceCategoryActivity"
-                    android:parentActivityName=".Buyer.BuyerActivity"
+        <activity android:name="com.example.capstoneProject.UserInterface.Messages.ChatLogActivity" />
+        <activity android:name="com.example.capstoneProject.UserInterface.Messages.CreateNewMessageActivity" />
+        <activity android:name="com.example.capstoneProject.UserInterface.Messages.MessagesActivity" />
+        <activity android:name="com.example.capstoneProject.UserInterface.General.DisplayReviewsActivity" />
+        <activity android:name="com.example.capstoneProject.UserInterface.Buyer.BuyerActivities.DisplaySpecificServiceActivity" />
+        <activity android:name="com.example.capstoneProject.UserInterface.ServiceProvider.SellerActivities.AboutMeAsSellerActivity" />
+        <activity android:name="com.example.capstoneProject.UserInterface.Buyer.BuyerActivities.ServiceCategoryActivity"
+                    android:parentActivityName="com.example.capstoneProject.UserInterface.Buyer.BuyerActivity"
             />
-        <activity android:name=".ServiceProvider.seller_activities.BuyersRequestActivity" />
-        <activity android:name=".Buyer.buyer_activities.ManageRequestActivity" />
-        <activity android:name=".Buyer.buyer_activities.RequestActivity" />
-        <activity android:name=".ServiceProvider.seller_activities.CreateServicesActivity" />
-        <activity android:name=".ProfileSettingsActivity">
+        <activity android:name="com.example.capstoneProject.UserInterface.ServiceProvider.SellerActivities.BuyersRequestActivity" />
+        <activity android:name="com.example.capstoneProject.UserInterface.Buyer.BuyerActivities.ManageRequestActivity" />
+        <activity android:name="com.example.capstoneProject.UserInterface.Buyer.BuyerActivities.RequestActivity" />
+        <activity android:name="com.example.capstoneProject.UserInterface.ServiceProvider.SellerActivities.CreateServicesActivity" />
+        <activity android:name="com.example.capstoneProject.UserInterface.General.ProfileSettingsActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.capstoneProject.ServiceProvider.SellerActivity" />
+                android:value="com.example.capstoneProject.UserInterface.ServiceProvider.SellerActivity" />
         </activity>
-        <activity android:name=".ServiceProvider.SellerActivity" />
-        <activity android:name=".Buyer.BuyerActivity" />
-        <activity android:name=".SignUpAcitivity" />
+        <activity android:name="com.example.capstoneProject.UserInterface.ServiceProvider.SellerActivity" />
+        <activity android:name="com.example.capstoneProject.UserInterface.Buyer.BuyerActivity" />
+        <activity android:name="com.example.capstoneProject.UserInterface.General.SignUpAcitivity" />
         <activity
-            android:name=".LoginActivity"
+            android:name="com.example.capstoneProject.UserInterface.General.LoginActivity"
             android:label="@string/title_activity_login" />
     </application>
 

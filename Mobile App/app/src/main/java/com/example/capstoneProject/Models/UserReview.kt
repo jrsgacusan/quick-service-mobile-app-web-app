@@ -9,5 +9,4 @@ class UserReview(var uid: String? = "",
                  var userImage: String? = "",
                  var userUid: String? = "",
                  var review: String = "",
-                 var rating: Int? =  0) {
-}
+                 var rating: Int? = 0)

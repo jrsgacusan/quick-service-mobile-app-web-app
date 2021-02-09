@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backGroundShadow"
-    tools:context=".Buyer.buyer_activities.ManageRequestActivity">
+    tools:context=".UserInterface.Buyer.BuyerActivities.ManageRequestActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolBar_activityManageRequest"

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backGroundShadow"
-    tools:context=".Buyer.SendRequirementActivity">
+    tools:context=".UserInterface.Buyer.SendRequirementActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_sendRequirementsActivity"
@@ -58,7 +58,6 @@
             app:srcCompat="@drawable/ic_selfie" />
 
         <TextView
-            android:id="@+id/textView36"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center_horizontal"
@@ -96,7 +95,6 @@
             app:srcCompat="@drawable/ic_id" />
 
         <TextView
-            android:id="@+id/textView37"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center"
@@ -136,7 +134,6 @@
             app:srcCompat="@drawable/ic_document" />
 
         <TextView
-            android:id="@+id/textView38"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center"

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/container_activityDisplaySpecificService"
-    tools:context=".Buyer.buyer_activities.DisplaySpecificServiceActivity">
+    tools:context=".UserInterface.Buyer.BuyerActivities.DisplaySpecificServiceActivity">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/messageSellerFloatingActionButton_activityDisplaySpecificService"
@@ -20,7 +20,6 @@
         app:srcCompat="@drawable/ic_message" />
 
     <androidx.core.widget.NestedScrollView
-        android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true">
