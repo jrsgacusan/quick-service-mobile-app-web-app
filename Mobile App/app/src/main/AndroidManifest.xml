@@ -23,7 +23,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
-        <activity android:name=".SendRequirementActivity" />
+        <activity android:name=".Buyer.SendRequirementActivity" />
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat" />
@@ -34,26 +34,26 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".messages_activities.ChatLogActivity" />
-        <activity android:name=".messages_activities.CreateNewMessageActivity" />
-        <activity android:name=".messages_activities.MessagesActivity" />
+        <activity android:name=".Messages.ChatLogActivity" />
+        <activity android:name=".Messages.CreateNewMessageActivity" />
+        <activity android:name=".Messages.MessagesActivity" />
         <activity android:name=".DisplayReviewsActivity" />
-        <activity android:name=".buyer_activities.DisplaySpecificServiceActivity" />
-        <activity android:name=".seller_activities.AboutMeAsSellerActivity" />
-        <activity android:name=".buyer_activities.ServiceCategoryActivity"
-                    android:parentActivityName=".BuyerActivity"
+        <activity android:name=".Buyer.buyer_activities.DisplaySpecificServiceActivity" />
+        <activity android:name=".ServiceProvider.seller_activities.AboutMeAsSellerActivity" />
+        <activity android:name=".Buyer.buyer_activities.ServiceCategoryActivity"
+                    android:parentActivityName=".Buyer.BuyerActivity"
             />
-        <activity android:name=".seller_activities.BuyersRequestActivity" />
-        <activity android:name=".buyer_activities.ManageRequestActivity" />
-        <activity android:name=".buyer_activities.RequestActivity" />
-        <activity android:name=".seller_activities.CreateServicesActivity" />
+        <activity android:name=".ServiceProvider.seller_activities.BuyersRequestActivity" />
+        <activity android:name=".Buyer.buyer_activities.ManageRequestActivity" />
+        <activity android:name=".Buyer.buyer_activities.RequestActivity" />
+        <activity android:name=".ServiceProvider.seller_activities.CreateServicesActivity" />
         <activity android:name=".ProfileSettingsActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.capstoneProject.SellerActivity" />
+                android:value="com.example.capstoneProject.ServiceProvider.SellerActivity" />
         </activity>
-        <activity android:name=".SellerActivity" />
-        <activity android:name=".BuyerActivity" />
+        <activity android:name=".ServiceProvider.SellerActivity" />
+        <activity android:name=".Buyer.BuyerActivity" />
         <activity android:name=".SignUpAcitivity" />
         <activity
             android:name=".LoginActivity"

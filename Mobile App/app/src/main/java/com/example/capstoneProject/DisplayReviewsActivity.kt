@@ -7,9 +7,9 @@ import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
-import com.example.capstoneProject.models.User
-import com.example.capstoneProject.models.UserReview
-import com.example.capstoneProject.views.ReviewItem
+import com.example.capstoneProject.Models.User
+import com.example.capstoneProject.Models.UserReview
+import com.example.capstoneProject.GroupieViews.ReviewItem
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase

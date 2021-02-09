@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
     android:padding="20dp"
-    tools:context=".seller_activities.BottomShowRequestFragment">
+    tools:context=".ServiceProvider.seller_activities.BottomShowRequestFragment">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imageVIew_fragmentBottomShowRequest"

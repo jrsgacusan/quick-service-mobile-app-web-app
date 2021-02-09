@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="20dp"
-    tools:context=".seller_manage_order_fragments.BottomFragmentSellerOrderDetails">
+    tools:context=".ServiceProvider.seller_manage_order_fragments.BottomFragmentSellerOrderDetails">
 
     <TextView
         android:id="@+id/textView4"

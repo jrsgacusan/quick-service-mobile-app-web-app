@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backGroundShadow"
-    tools:context=".seller_activities.AboutMeAsSellerActivity">
+    tools:context=".ServiceProvider.seller_activities.AboutMeAsSellerActivity">
 
     <ScrollView
         android:layout_width="match_parent"

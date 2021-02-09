@@ -14,10 +14,10 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isGone
 import androidx.core.view.isVisible
-import com.example.capstoneProject.dialogs.LoadingDialog
-import com.example.capstoneProject.handlers.UserHandler
-import com.example.capstoneProject.models.User
-import com.example.capstoneProject.models.UserSellerInfo
+import com.example.capstoneProject.Dialogs.LoadingDialog
+import com.example.capstoneProject.Handlers.UserHandler
+import com.example.capstoneProject.Models.User
+import com.example.capstoneProject.Models.UserSellerInfo
 import com.google.android.gms.tasks.RuntimeExecutionException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/container_activityDisplaySpecificService"
-    tools:context=".buyer_activities.DisplaySpecificServiceActivity">
+    tools:context=".Buyer.buyer_activities.DisplaySpecificServiceActivity">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/messageSellerFloatingActionButton_activityDisplaySpecificService"

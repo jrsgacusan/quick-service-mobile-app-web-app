@@ -1,7 +1,6 @@
 package com.example.capstoneProject
 
 
-import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
@@ -11,11 +10,10 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import com.example.capstoneProject.dialogs.ResetPassword
-import com.example.capstoneProject.models.User
-import com.google.android.gms.tasks.RuntimeExecutionException
+import com.example.capstoneProject.Buyer.BuyerActivity
+import com.example.capstoneProject.Dialogs.ResetPassword
+import com.example.capstoneProject.Models.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:stateListAnimator="@anim/nav_default_enter_anim"
-    tools:context=".buyer_fragments.ProfileFragment">
+    tools:context=".Buyer.buyer_fragments.ProfileFragment">
 
     <!-- TODO: Update blank fragment layout -->
 

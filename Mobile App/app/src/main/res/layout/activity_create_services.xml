@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/backGroundShadow"
     android:id="@+id/view_activityCreateServices"
-    tools:context=".seller_activities.CreateServicesActivity">
+    tools:context=".ServiceProvider.seller_activities.CreateServicesActivity">
 
     <ScrollView
         android:layout_width="match_parent"

@@ -8,7 +8,7 @@
     android:backgroundTint="@color/white"
     android:elevation="4dp"
     android:textAlignment="textStart"
-    tools:context=".buyer_fragments.HomeFragment">
+    tools:context=".Buyer.buyer_fragments.HomeFragment">
 
     <!-- TODO: Update blank fragment layout -->
 

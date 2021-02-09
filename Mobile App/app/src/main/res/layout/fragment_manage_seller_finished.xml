@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".seller_manage_order_fragments.SellerFinishedFragment">
+    tools:context=".ServiceProvider.seller_manage_order_fragments.SellerFinishedFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView_fragmentManageSellerFinished"
