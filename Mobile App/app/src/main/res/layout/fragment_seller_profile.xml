@@ -84,6 +84,7 @@
             android:layout_marginEnd="15dp"
             android:clickable="true"
             android:elevation="2dp"
+            app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="7dp"
             app:cardElevation="2dp"
             app:layout_constraintBottom_toBottomOf="@+id/seller_aboutMeCardView"
@@ -113,9 +114,13 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
             android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="#FFFFFF"
             android:clickable="true"
             android:elevation="2dp"
+            app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="7dp"
             app:cardElevation="2dp"
             app:layout_constraintBottom_toTopOf="@+id/buyersRequestCardView_fragmentSellerProfile"
@@ -144,8 +149,10 @@
             android:id="@+id/buyersRequestCardView_fragmentSellerProfile"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:layout_marginBottom="15dp"
             android:clickable="true"
             android:elevation="2dp"
+            app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="7dp"
             app:cardElevation="2dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -164,9 +171,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom|center"
+                android:layout_gravity="bottom|clip_horizontal|center|clip_vertical"
                 android:padding="10dp"
-                android:text="Buyers Request" />
+                android:text="Buyers Request"
+                android:textAlignment="center" />
         </androidx.cardview.widget.CardView>
 
         <androidx.appcompat.widget.Toolbar

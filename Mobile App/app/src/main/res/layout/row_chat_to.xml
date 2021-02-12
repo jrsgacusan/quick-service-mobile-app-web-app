@@ -24,6 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:maxWidth="240dp"
+        app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="10dp"
         app:cardElevation="0dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView_chatToRow"
