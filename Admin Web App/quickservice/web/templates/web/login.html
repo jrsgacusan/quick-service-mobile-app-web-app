@@ -1,0 +1,15 @@
+{% extends "web/layout.html" %}
+{% load static %}
+
+
+{% block body %}
+<div class="login-box">
+    <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+        <img src="{% static 'web/logo.png' %}" alt="Quick-S Logo" id="logoImage">
+        <input class="input-text" name="username" placeholder="Email"/>
+        <input class="input-text" name = "password" type="password"  id="password" placeholder="Password" />
+        <input value="Login" type="submit" class="button">
+    </form>
+</div>
+{% endblock %}
