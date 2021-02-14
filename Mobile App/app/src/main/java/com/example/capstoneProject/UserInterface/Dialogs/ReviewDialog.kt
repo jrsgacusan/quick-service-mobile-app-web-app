@@ -62,28 +62,14 @@ class ReviewDialog(fragment: Fragment, order: Order) {
         val userBeingReviewed = order.service_provider_uid!!
         val currentUserUid = FirebaseAuth.getInstance().currentUser!!.uid
         val ref = FirebaseDatabase.getInstance().getReference("reviews/$userBeingReviewed")
-        val currentUserRef = FirebaseDatabase.getInstance().getReference("users/$currentUserUid")
-        currentUserRef.addListenerForSingleValueEvent(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                val currentUser = snapshot.getValue(User::class.java)!!
-                val id = ref.push().key!!
-                val review = UserReview(
-                        uid = id,
-                        fname = currentUser.firstName,
-                        lname = currentUser.lastName,
-                        userImage = currentUser.profileImageUrl,
-                        userUid = currentUserUid,
-                        review = editText.text.toString(),
-                        rating = ratingBar.rating.toInt()
-                )
-                ref.child(id).setValue(review)
-
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-
-            }
-        })
+        val id = ref.push().key!!
+        val review = UserReview(
+                uid = id,
+                userUid = currentUserUid,
+                review = editText.text.toString(),
+                rating = ratingBar.rating.toInt()
+        )
+        ref.child(id).setValue(review)
 
         val bookedByRef = FirebaseDatabase.getInstance().getReference("booked_by/${order.userUid}/${order.uid}")
         bookedByRef.child("/reviewed").setValue(true)

@@ -192,7 +192,6 @@ class RequestActivity : AppCompatActivity() {
                                     description = descriptionEditText.text.toString(),
                                     title = titleEditText.text.toString(),
                                     price = priceEditText.text.toString().toInt(),
-                                    userImage = user!!.profileImageUrl,
                                     category = categoryEditText.text.toString()
                             )
                             if (serviceRequestHandler.createServiceRequest(serviceRequest)) {
@@ -255,18 +254,6 @@ class RequestActivity : AppCompatActivity() {
             descriptionEditText.requestFocus()
             return
         }
-//        //Check the price
-//        var numeric = true
-//        try {
-//            val num = parseInt(priceEditText.text.toString())
-//        } catch (e: NumberFormatException) {
-//            numeric = false
-//        }
-//        if(numeric == false) {
-//            priceEditText.error = "Please enter a valid number."
-//            priceEditText.requestFocus()
-//            return
-//        }
         if (priceEditText.text.toString().toInt() <= 300) {
             priceEditText.error = "Price is below minimum."
             priceEditText.requestFocus()
@@ -277,7 +264,7 @@ class RequestActivity : AppCompatActivity() {
             Toast.makeText(this, "Choose a category.", Toast.LENGTH_SHORT).show()
             return
         }
-        val serviceRequest = ServiceRequest(uid = ManageRequestActivity.serviceRequestGettingEdited!!.uid, title = titleEditText.text.toString(), description = descriptionEditText.text.toString(), price = priceEditText.text.toString().toInt(), userUid = currentUserUid, category = categoryEditText.text.toString(), userImage = ManageRequestActivity.serviceRequestGettingEdited!!.userImage
+        val serviceRequest = ServiceRequest(uid = ManageRequestActivity.serviceRequestGettingEdited!!.uid, title = titleEditText.text.toString(), description = descriptionEditText.text.toString(), price = priceEditText.text.toString().toInt(), userUid = currentUserUid, category = categoryEditText.text.toString()
         )
         if (serviceRequestHandler.updateServiceRequest(serviceRequest)) {
             Toast.makeText(this, "Service request updated", Toast.LENGTH_SHORT).show()

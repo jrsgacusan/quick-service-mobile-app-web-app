@@ -38,7 +38,18 @@ class BottomShowRequestFragment : BottomSheetDialogFragment() {
         textView = v.findViewById(R.id.textView_fragmentBottomShowRequest)
         floatButton = v.findViewById(R.id.floatingActionButton_fragmentBottomShowRequest)
 
-        Picasso.get().load(BuyersRequestActivity.serviceRequestToBeViewed!!.userImage.toString()).into(imageView)
+        val ref = FirebaseDatabase.getInstance().getReference("users/${BuyersRequestActivity.serviceRequestToBeViewed!!.userUid}")
+        ref.addListenerForSingleValueEvent(object: ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val userData = snapshot.getValue(User::class.java)
+                Picasso.get().load(userData!!.profileImageUrl).into(imageView)
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+
+            }
+        })
+
         textView.text = "${BuyersRequestActivity.serviceRequestToBeViewed!!.description}"
 
         floatButton.setOnClickListener {

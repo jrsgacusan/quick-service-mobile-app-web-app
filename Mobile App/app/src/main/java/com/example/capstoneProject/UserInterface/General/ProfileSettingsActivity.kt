@@ -119,9 +119,6 @@ class ProfileSettingsActivity : AppCompatActivity() {
             return
         }
 
-
-
-
         uploadNewImage.isVisible = false
         firstNameProfileEditText.isEnabled = false
         lastNameProfileEditText.isEnabled = false
@@ -152,41 +149,6 @@ class ProfileSettingsActivity : AppCompatActivity() {
         }
         //Sets the selected photo to null again
         button.text = "Update"
-    }
-
-    private fun updateServicesImagerUrl(imageUrl: String) {
-        val currentUserUid = FirebaseAuth.getInstance().currentUser!!.uid
-        val ref = FirebaseDatabase.getInstance().getReference("/services/$currentUserUid")
-        ref.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                snapshot.children.forEach {
-                    val ref2 = FirebaseDatabase.getInstance().getReference("/services/$currentUserUid/${it.key}")
-                    ref2.child("/userImageUrl").setValue(imageUrl)
-                }
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-            }
-        })
-    }
-
-    private fun updateServiceRequestImageUrl(imageUrl: String) {
-        val currentUserUid = FirebaseAuth.getInstance().currentUser!!.uid
-        val ref = FirebaseDatabase.getInstance().getReference("/service_requests")
-        ref.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                snapshot.children.forEach {
-                    val serviceRequest = it.getValue(ServiceRequest::class.java)
-                    if (serviceRequest!!.userUid == currentUserUid) {
-                        val requestRef = FirebaseDatabase.getInstance().getReference("/service_requests/${serviceRequest.uid}")
-                        requestRef.child("/userImage").setValue(imageUrl)
-                    }
-                }
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-            }
-        })
     }
 
     //Uploading an image to image view override function
@@ -233,8 +195,6 @@ class ProfileSettingsActivity : AppCompatActivity() {
                         ref.downloadUrl.addOnSuccessListener {
                             deleteThePreviousImageFromFirebaseDatabase()
                             saveUserToFireBaseDatabase(it.toString())
-                            updateServicesImagerUrl(it.toString())
-                            updateServiceRequestImageUrl(it.toString())
                             loadingDialog.dismissDialog()
                         }
                     }

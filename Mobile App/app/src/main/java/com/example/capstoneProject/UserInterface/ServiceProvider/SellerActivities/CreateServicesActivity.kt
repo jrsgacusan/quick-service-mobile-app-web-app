@@ -245,37 +245,28 @@ class CreateServicesActivity : AppCompatActivity() {
                 // positive button text and action
                 .setPositiveButton("Proceed") { _, _ ->
                     val currentUser = FirebaseAuth.getInstance().currentUser!!.uid
-                    val ref = FirebaseDatabase.getInstance().getReference("/users/$currentUser")
-                    ref.addListenerForSingleValueEvent(object : ValueEventListener {
-                        override fun onDataChange(snapshot: DataSnapshot) {
-                            val user = snapshot.getValue(User::class.java)
-                            val serviceRef = FirebaseDatabase.getInstance().getReference("/services/$currentUser")
-                            val uid = serviceRef.push().key
-                            val service = Service(uid = uid,
-                                    userImageUrl = user!!.profileImageUrl,
-                                    title = titleEditText.text.toString(),
-                                    description = descriptionEditText.text.toString(),
-                                    price = priceEditText.text.toString().toInt(),
-                                    category = spinner.selectedItem.toString(),
-                                    userUid = currentUserUid)
-                            serviceRef.child(service.uid!!).setValue(service)
-                                    .addOnSuccessListener {
-                                        Toast.makeText(applicationContext, "Service successfuly created", Toast.LENGTH_SHORT).show()
-                                    }
-                                    .addOnFailureListener {
-                                        Toast.makeText(applicationContext, "Failed to create service, try again later", Toast.LENGTH_SHORT).show()
-                                    }
-                            if (arrayListImagesToBeUploaded.isNotEmpty()) {
-                                uploadImages(uid!!)
-                            } else {
-                                finish()
+                    val serviceRef = FirebaseDatabase.getInstance().getReference("/services/$currentUser")
+                    val uid = serviceRef.push().key
+                    val service = Service(
+                            uid = uid,
+                            title = titleEditText.text.toString(),
+                            description = descriptionEditText.text.toString(),
+                            price = priceEditText.text.toString().toInt(),
+                            category = spinner.selectedItem.toString(),
+                            userUid = currentUserUid)
+                    serviceRef.child(service.uid!!).setValue(service)
+                            .addOnSuccessListener {
+                                Toast.makeText(applicationContext, "Service successfuly created", Toast.LENGTH_SHORT).show()
                             }
+                            .addOnFailureListener {
+                                Toast.makeText(applicationContext, "Failed to create service, try again later", Toast.LENGTH_SHORT).show()
+                            }
+                    if (arrayListImagesToBeUploaded.isNotEmpty()) {
+                        uploadImages(uid!!)
+                    } else {
+                        finish()
+                    }
 
-                        }
-
-                        override fun onCancelled(error: DatabaseError) {
-                        }
-                    })
                 }
                 // negative button text and action
                 .setNegativeButton("Cancel") { dialog, _ ->
