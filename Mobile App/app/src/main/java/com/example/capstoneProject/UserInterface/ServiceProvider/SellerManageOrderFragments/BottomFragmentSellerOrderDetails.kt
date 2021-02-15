@@ -139,6 +139,7 @@ class BottomFragmentSellerOrderDetails(order: Order) : BottomSheetDialogFragment
                     bookedByRef.child("sellerConfirmation").setValue("CONFIRMED")
                     bookedToRef.child("sellerConfirmation").setValue("CONFIRMED")
                     Toast.makeText(v.context, "Booking confirmed as completed.", Toast.LENGTH_SHORT).show()
+                    statusListener()
                 }
                 .setNegativeButton("Cancel") { dialog, _ ->
                     dialog.cancel()

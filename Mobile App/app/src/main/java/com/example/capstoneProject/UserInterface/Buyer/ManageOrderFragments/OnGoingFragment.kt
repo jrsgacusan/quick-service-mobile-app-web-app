@@ -47,6 +47,7 @@ class OnGoingFragment : Fragment() {
             }
         }
         fetchOrders()
+        statusListener()
         return v
     }
 
@@ -84,5 +85,46 @@ class OnGoingFragment : Fragment() {
             }
         })
     }
+
+    private fun statusListener() {
+
+        val currentUser = FirebaseAuth.getInstance().currentUser!!.uid
+        val anotherRef = FirebaseDatabase.getInstance().getReference("booked_by/$currentUser")
+        anotherRef.addValueEventListener(object : ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                snapshot.children.forEach{ booking ->
+                    val order = booking.getValue(Order::class.java)
+                    val orderUid = order!!.uid!!
+                    val ref = FirebaseDatabase.getInstance().getReference("booked_by/$currentUser/$orderUid")
+                    ref.addListenerForSingleValueEvent(object : ValueEventListener {
+                        override fun onDataChange(snapshot: DataSnapshot) {
+                            try {
+                                val order = snapshot.getValue(Order::class.java)!!
+                                if (order.buyerConfirmation == "CONFIRMED" && order.sellerConfirmation == "CONFIRMED") {
+                                    ref.child("/status").setValue("COMPLETED")
+
+                                }
+                            } catch (e: NullPointerException) {
+
+                            }
+                        }
+
+                        override fun onCancelled(error: DatabaseError) {
+                        }
+                    })
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+
+            }
+        })
+
+
+
+
+
+    }
+
 
 }

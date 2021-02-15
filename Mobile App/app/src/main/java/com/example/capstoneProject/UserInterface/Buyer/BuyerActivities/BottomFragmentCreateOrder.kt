@@ -145,19 +145,30 @@ class BottomFragmentCreateOrder : BottomSheetDialogFragment() {
 
     private fun showTheDialog() {
         val dialogBuilder = AlertDialog.Builder(v.context)
-        dialogBuilder.setMessage("Book service now.")
+        dialogBuilder.setMessage("Do you want to continue?")
                 .setCancelable(true)
                 .setPositiveButton("Continue(₱${DisplaySpecificServiceActivity.serviceToBeOrdered!!.price})") { _, _ ->
-                    //This is the part where the payment comes in.
-                    //Implement it here
                     //For now, just create the order.
-                    createTheOrder()
+                    val dialogBuilder2 = AlertDialog.Builder(v.context)
+                    dialogBuilder2.setMessage("Once the order is created and accepted by the Service Provider, it could not be cancelled.")
+                            .setCancelable(true)
+                            .setPositiveButton("Got it") { _, _ ->
+                                //For now, just create the order.
+
+                                createTheOrder()
+                            }
+                            .setNegativeButton("Cancel") { dialog, _ ->
+                                dialog.cancel()
+                            }
+                    val alert = dialogBuilder2.create()
+                    alert.setTitle("Notice")
+                    alert.show()
                 }
                 .setNegativeButton("Cancel") { dialog, _ ->
                     dialog.cancel()
                 }
         val alert = dialogBuilder.create()
-        alert.setTitle("Continue?")
+        alert.setTitle("Create Order")
         alert.show()
     }
 
@@ -228,6 +239,7 @@ class BottomFragmentCreateOrder : BottomSheetDialogFragment() {
     private fun getTheTime(): String {
         var output: String
         var hr = 0
+        var minute = ""
         var text = ""
 
         if (timePicker.hour >= 13) {
@@ -241,7 +253,13 @@ class BottomFragmentCreateOrder : BottomSheetDialogFragment() {
             text = "AM"
         }
 
-        output = "$hr:${timePicker.minute} $text"
+        if (timePicker.minute <= 9) {
+            minute = "0${timePicker.minute}"
+        } else {
+            minute = "${timePicker.minute}"
+        }
+
+        output = "$hr:$minute $text"
         return output
 
 

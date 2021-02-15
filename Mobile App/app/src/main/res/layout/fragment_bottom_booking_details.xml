@@ -146,6 +146,18 @@
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintTop_toBottomOf="@+id/button_orderDetails" />
 
+      <Button
+          android:id="@+id/cancelButton_orderDetails"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="5dp"
+          android:background="@drawable/rounded_buttons"
+          android:text="CANCEL ORDER"
+          android:textColor="#FFFFFF"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/anotherButton_orderDetails" />
+
       <TextView
           android:id="@+id/address_fragmentBottomBookingDetails"
           android:layout_width="wrap_content"
