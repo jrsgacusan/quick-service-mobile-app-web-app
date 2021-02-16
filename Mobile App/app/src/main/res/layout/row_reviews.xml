@@ -38,11 +38,12 @@
 
             <TextView
                 android:id="@+id/nameTextView_reviewsRow"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:fontFamily="sans-serif-black"
                 android:text="Name"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/userImage_serviceRow"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -59,7 +60,7 @@
                 app:layout_constraintStart_toStartOf="@+id/nameTextView_reviewsRow"
                 app:layout_constraintTop_toBottomOf="@+id/nameTextView_reviewsRow" />
 
-            <TextView
+            <com.codesgood.views.JustifiedTextView
                 android:id="@+id/reviewTextView_reviewsRow"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"

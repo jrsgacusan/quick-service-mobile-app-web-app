@@ -93,6 +93,8 @@ dependencies {
     implementation "androidx.work:work-runtime-ktx:$work_version"
     //Google pay api
     implementation 'com.google.android.gms:play-services-wallet:18.1.1'
+    //justify
+    implementation 'com.codesgood:justifiedtextview:1.1.0'
 
 
 

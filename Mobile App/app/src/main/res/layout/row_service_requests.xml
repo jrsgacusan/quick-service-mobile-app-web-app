@@ -34,7 +34,7 @@
         app:layout_constraintStart_toEndOf="@+id/imageView_serviceRowRequest"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
+    <com.codesgood.views.JustifiedTextView
         android:id="@+id/descriptionTextView_serviceRowRequest"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

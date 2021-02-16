@@ -54,11 +54,11 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
-                        <TextView
+                        <com.codesgood.views.JustifiedTextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:justificationMode="inter_word"
-                            android:text="When creating a service, please be as detailed as possible. Once your service is created, it will be assessed and evaluated by the administrators. All your informations and credentials will thoroughly be checked. Once the authentication is complete, it will be shown on services category and buyers will be able to order for it. This is done for the safety of our users."
+                            android:text="When creating a service, please be as detailed as possible. Once the Service is created, it will be added on the list of services that the users could view. You can edit, delete, activate, or pause the service. Pausing the services will remove the service from the active list of services, activating the service does the opposite of pausing the service. You can also preview the service you created."
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/textView13" />
@@ -278,7 +278,7 @@
                     android:id="@+id/textView7"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Add photos to your gallery. Photos will be shown when a user view the service you posted. (Please upload landscape photos only)"
+                    android:text="Add photos to your gallery. Photos will be shown when a user views the service you listed. "
                     app:layout_constraintEnd_toEndOf="@+id/imagesListView_activityCreateServices"
                     app:layout_constraintStart_toStartOf="@+id/price_createServices"
                     app:layout_constraintTop_toBottomOf="@+id/view13" />

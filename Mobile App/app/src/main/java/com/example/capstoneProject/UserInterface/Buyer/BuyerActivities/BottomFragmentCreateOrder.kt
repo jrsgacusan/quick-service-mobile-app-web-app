@@ -150,15 +150,16 @@ class BottomFragmentCreateOrder : BottomSheetDialogFragment() {
                 .setPositiveButton("Continue(₱${DisplaySpecificServiceActivity.serviceToBeOrdered!!.price})") { _, _ ->
                     //For now, just create the order.
                     val dialogBuilder2 = AlertDialog.Builder(v.context)
-                    dialogBuilder2.setMessage("Once the order is created and accepted by the Service Provider, it could not be cancelled.")
-                            .setCancelable(true)
+                    dialogBuilder2.setMessage(
+                                    "1.) Once the order is created, it will appear on the list of orders of the Service Provider. The Service provider could choose to accept or decline the order.\n" +
+                                    "2.) If the order is accepted by the Service Provider, it could not be cancelled. Else, you could opt to cancel the order.\n" +
+                                    "3.) When the order is finished, both the Service Provider and the Buyer should confirm the booking to validate that it is completed. On the event that the Buyer wasn't able to confirm that the order is finished, within 5 days, it will automatically be marked as completed.\n" +
+                                    "4.) You can add a review to the Service Provider once the Order is Completed.\n" +
+                                    "5.) You could use the built-in messaging feature of the App to communicate with the Service Provider.")
+                            .setCancelable(false)
                             .setPositiveButton("Got it") { _, _ ->
                                 //For now, just create the order.
-
                                 createTheOrder()
-                            }
-                            .setNegativeButton("Cancel") { dialog, _ ->
-                                dialog.cancel()
                             }
                     val alert = dialogBuilder2.create()
                     alert.setTitle("Notice")

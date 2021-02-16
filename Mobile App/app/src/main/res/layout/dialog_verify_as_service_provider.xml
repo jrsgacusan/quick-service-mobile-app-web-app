@@ -18,14 +18,33 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView29"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="fill_horizontal"
-        android:text="Verify your account now to use it as a Service Provider."
+        android:fontFamily="sans-serif-black"
+        android:text="HOW DOES IT WORK?"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView29" />
+
+    <com.codesgood.views.JustifiedTextView
+        android:id="@+id/textView29"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Verify your account now to use it as a Service Provider. "
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView30" />
+
+    <com.codesgood.views.JustifiedTextView
+        android:id="@+id/textView9"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Submit the requirements needed and wait until your account is verified by the administrators. Once the account is verified, you can now use the Service Provider Mode. Service Provider Mode allows you to create services, manage service orders, and view list of service requests posted by our users."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/submitButton_dialog_verify"
@@ -37,7 +56,7 @@
         android:text="VERIFY NOW"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/cancelButton_dialog_verify"
-        app:layout_constraintTop_toBottomOf="@+id/textView29" />
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <Button
         android:id="@+id/cancelButton_dialog_verify"

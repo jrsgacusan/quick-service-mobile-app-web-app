@@ -44,7 +44,7 @@
         app:layout_constraintStart_toEndOf="@+id/date_fragmentBottomBookingDetailsSeller"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
-    <TextView
+    <com.codesgood.views.JustifiedTextView
         android:id="@+id/address_fragmentBottomBookingDetailsSeller"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -68,7 +68,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/address_fragmentBottomBookingDetailsSeller" />
 
-    <TextView
+    <com.codesgood.views.JustifiedTextView
         android:id="@+id/name_fragmentBottomBookingDetailsSeller"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -102,7 +102,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/number_fragmentBottomBookingDetailsSeller" />
 
-    <TextView
+    <com.codesgood.views.JustifiedTextView
         android:id="@+id/title_fragmentBottomBookingDetailsSeller"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -113,7 +113,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/category_fragmentBottomBookingDetailsSeller" />
 
-    <TextView
+    <com.codesgood.views.JustifiedTextView
         android:id="@+id/description_fragmentBottomBookingDetailsSeller"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -148,7 +148,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_fragmentBottomBookingDetailsSeller" />
 
-    <TextView
+    <com.codesgood.views.JustifiedTextView
         android:id="@+id/dandt_fragmentBottomBookingDetailsSeller"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

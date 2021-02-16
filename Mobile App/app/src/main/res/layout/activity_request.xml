@@ -216,7 +216,7 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
-                        <TextView
+                        <com.codesgood.views.JustifiedTextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:justificationMode="inter_word"
