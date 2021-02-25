@@ -1,5 +1,6 @@
 package com.example.capstoneProject.UserInterface.Buyer.BuyerFragments
 
+import android.content.DialogInterface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,7 @@ import android.widget.ImageView
 import android.widget.Switch
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import com.example.capstoneProject.*
@@ -19,6 +21,7 @@ import com.example.capstoneProject.UserInterface.Buyer.BuyerActivities.RequestAc
 import com.example.capstoneProject.UserInterface.Dialogs.VerifyDialog
 import com.example.capstoneProject.Handlers.UserHandler
 import com.example.capstoneProject.Models.User
+import com.example.capstoneProject.UserInterface.General.LoginActivity
 import com.example.capstoneProject.UserInterface.ServiceProvider.SellerActivity
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
@@ -71,6 +74,8 @@ class ProfileFragment : Fragment() {
         //Switch button to change the mode.
         switch.setOnClickListener {
             checkIfVerified()
+//            trialMode()
+
         }
         //Post Request
         postRequestCardView.setOnClickListener {
@@ -89,6 +94,21 @@ class ProfileFragment : Fragment() {
         }
 
         return v
+    }
+
+    private fun trialMode() {
+
+        val dialogBuilder = AlertDialog.Builder(v.context)
+        dialogBuilder.setMessage("Originally, when switching from Buyer to a Service Provider, we require 3 requirements from the user." +
+                "But since we are gathering feedback about the app, we disabled the verification function for you to explore the Service Provider Mode.")
+                .setCancelable(true)
+                .setPositiveButton("Got it", DialogInterface.OnClickListener { _, _ ->
+                    changeMode(switch.isChecked)
+                })
+        val alert = dialogBuilder.create()
+        alert.setTitle("Read Me")
+        alert.show()
+
     }
 
     private fun checkIfVerified() {

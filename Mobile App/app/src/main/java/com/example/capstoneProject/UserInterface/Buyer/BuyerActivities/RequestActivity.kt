@@ -132,8 +132,8 @@ class RequestActivity : AppCompatActivity() {
             titleEditText.requestFocus()
             return
         }
-        if (titleEditText.text.toString().length <= 14) {
-            titleEditText.error = "Title is too short, please include more than 15 characters."
+        if (titleEditText.text.toString().length < 11 || titleEditText.text.toString().length > 25 ) {
+            titleEditText.error = "The title should be 11-25 characters."
             titleEditText.requestFocus()
             return
         }
@@ -238,8 +238,8 @@ class RequestActivity : AppCompatActivity() {
             titleEditText.requestFocus()
             return
         }
-        if (titleEditText.text.toString().length <= 20) {
-            titleEditText.error = "Title is too short, please include more than 21 characters."
+        if (titleEditText.text.toString().length < 11 || titleEditText.text.toString().length > 25 ) {
+            titleEditText.error = "The title should be 11-25 characters."
             titleEditText.requestFocus()
             return
         }
