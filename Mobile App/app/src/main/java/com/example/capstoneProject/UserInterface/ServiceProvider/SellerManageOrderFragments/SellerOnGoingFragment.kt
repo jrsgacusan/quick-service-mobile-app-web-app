@@ -57,8 +57,6 @@ class SellerOnGoingFragment : Fragment() {
 
     private fun checkDate(date: String): Boolean{
         val values = date.split(" ").toTypedArray()
-
-
         val month = convertMonth(values[0])
         val day = values[1].substring(0,2)
         val year = values[2]

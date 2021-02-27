@@ -79,7 +79,7 @@ class BottomFragmentOrderDetails(orderPassed: Order) : BottomSheetDialogFragment
         category.text = "${category.text} ${order.category}"
         title.text = "${title.text} ${order.title}"
         description.text = "${description.text} ${order.description}"
-        dateOrdered.text = "${dateOrdered.text} ${convertLongToDate(order.dateOrdered)}"
+        dateOrdered.text = "Date and Time Booked: ${convertLongToDate(order.dateOrdered)}"
         address.text = "${address.text} ${order.address}"
         mode.text = "Mode of Payment: ${order.modeOfPayment}"
 

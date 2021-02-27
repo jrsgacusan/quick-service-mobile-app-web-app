@@ -20,6 +20,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import java.util.*
 
 class BottomFragmentSellerOrderDetails(order: Order) : BottomSheetDialogFragment() {
     private var orderClicked = order
@@ -71,7 +72,7 @@ class BottomFragmentSellerOrderDetails(order: Order) : BottomSheetDialogFragment
         category.text = "Category: ${orderClicked.category}"
         title.text = "Title: ${orderClicked.title}"
         description.text = "Description: ${orderClicked.description}"
-        dandtbooked.text = "Date and Time Booked: ${orderClicked.dateOrdered}"
+        dandtbooked.text = "Date and Time Booked: ${convertLongToDate(orderClicked.dateOrdered)}"
         date.text = "Date: ${orderClicked.date}"
         modeEditText.text = "Mode of Payment: ${orderClicked.modeOfPayment}"
         fetchNameAndNumber()
@@ -92,6 +93,10 @@ class BottomFragmentSellerOrderDetails(order: Order) : BottomSheetDialogFragment
         statusListener()
 
         return v
+    }
+    private fun convertLongToDate(long: Long): String {
+        val resultdate = Date(long)
+        return resultdate.toString()
     }
 
     private fun statusListener() {
