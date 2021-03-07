@@ -102,6 +102,8 @@ class BottomFragmentOrderDetails(orderPassed: Order) : BottomSheetDialogFragment
         button.setOnClickListener {
             fetchUserAndGoToChatLogActivity()
         }
+
+
         return v
     }
 
@@ -125,6 +127,8 @@ class BottomFragmentOrderDetails(orderPassed: Order) : BottomSheetDialogFragment
         val alert = dialogBuilder.create()
         alert.setTitle("Cancel Order")
         alert.show()
+
+
 
 
     }

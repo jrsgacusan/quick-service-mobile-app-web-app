@@ -50,12 +50,12 @@ class SignUpAcitivity : AppCompatActivity() {
 
     companion object {
         //image pick code
-        val IMAGE_PICK_CODE = 1000
+        const val IMAGE_PICK_CODE: Int = 1000
 
         //Permission code
         private val PERMISSION_CODE = 1001
 
-        val DEFAULT_IMG_URL: String = "https://firebasestorage.googleapis.com/v0/b/course-project-88fec.appspot.com/o/default-images%2Fprofile_image_default.webp?alt=media&token=652ce853-0e3a-49ff-9fd7-980d02c6bb32"
+        const val DEFAULT_IMG_URL: String = "https://firebasestorage.googleapis.com/v0/b/course-project-88fec.appspot.com/o/default-images%2Fprofile_image_default.webp?alt=media&token=652ce853-0e3a-49ff-9fd7-980d02c6bb32"
 
     }
 
@@ -65,6 +65,10 @@ class SignUpAcitivity : AppCompatActivity() {
 
         userHandler = UserHandler()
         auth = FirebaseAuth.getInstance()
+
+
+
+
 
         //Map the layout file views to the Kotlin file
         fname = findViewById(R.id.firstNameEditText)

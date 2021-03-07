@@ -137,8 +137,12 @@ class BottomFragmentCreateOrder : BottomSheetDialogFragment() {
             displayToast()
             return
         }
+        var day = ""
+        if (dayOfMonthPicked <= 9){
+            day = "0$dayOfMonthPicked"
+        }
 
-        dateTextView.text = "${month(monthPicked)} $dayOfMonthPicked, $yearPicked"
+        dateTextView.text = "${month(monthPicked)} $day, $yearPicked"
 
 
     }

@@ -3,6 +3,7 @@ package com.example.capstoneProject.UserInterface.ServiceProvider.SellerManageOr
 import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,6 +21,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import java.text.SimpleDateFormat
 import java.util.*
 
 class BottomFragmentSellerOrderDetails(order: Order) : BottomSheetDialogFragment() {
@@ -92,6 +94,7 @@ class BottomFragmentSellerOrderDetails(order: Order) : BottomSheetDialogFragment
 
         statusListener()
 
+
         return v
     }
     private fun convertLongToDate(long: Long): String {
@@ -141,10 +144,16 @@ class BottomFragmentSellerOrderDetails(order: Order) : BottomSheetDialogFragment
                     val bookingUid = orderClicked.uid!!
                     val bookedByRef = FirebaseDatabase.getInstance().getReference("booked_by/$bookedBy/$bookingUid")
                     val bookedToRef = FirebaseDatabase.getInstance().getReference("booked_to/$bookedTo/$bookingUid")
-                    bookedByRef.child("sellerConfirmation").setValue("CONFIRMED")
-                    bookedToRef.child("sellerConfirmation").setValue("CONFIRMED")
-                    Toast.makeText(v.context, "Booking confirmed as completed.", Toast.LENGTH_SHORT).show()
-                    statusListener()
+                    if (checkDate(orderClicked.date!!)) {
+                        Toast.makeText(v.context, "The Current Date is less than the Booking Date. ", Toast.LENGTH_SHORT).show()
+                    } else {
+                        bookedByRef.child("sellerConfirmation").setValue("CONFIRMED")
+                        bookedToRef.child("sellerConfirmation").setValue("CONFIRMED")
+                        Toast.makeText(v.context, "Booking confirmed as completed.", Toast.LENGTH_SHORT).show()
+                        statusListener()
+                    }
+
+
                 }
                 .setNegativeButton("Cancel") { dialog, _ ->
                     dialog.cancel()
@@ -156,6 +165,47 @@ class BottomFragmentSellerOrderDetails(order: Order) : BottomSheetDialogFragment
         if (orderClicked.sellerConfirmation == "CONFIRMED") {
             Toast.makeText(v.context, "You already confirmed this booking.", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    private fun checkDate(date: String): Boolean{
+        val values = date.split(" ").toTypedArray()
+        val month = convertMonth(values[0])
+        val day = values[1].substring(0,2)
+        val year = values[2]
+        val longDate = "$year$month$day".toLong()
+        val currentDate = convertLongToTime(System.currentTimeMillis()).toLong()
+        Log.d("INeedThisValue", "Month: ${values[0]}")
+        Log.d("INeedThisValue", "Day: ${values[1]}")
+        Log.d("INeedThisValue", "Year: ${values[2]}")
+        Log.d("INeedThisValue", "Date Needed: $longDate")
+        Log.d("INeedThisValue", "Current Date: $currentDate")
+        return currentDate < longDate
+    }
+
+    fun convertLongToTime(time: Long): String {
+        val date = Date(time)
+        val format = SimpleDateFormat("yyyyMMdd")
+        return format.format(date)
+    }
+
+    private fun convertMonth(s: String): String {
+        var returnValue = "";
+        when(s.toUpperCase()) {
+            "JANUARY" -> { returnValue = "01" }
+            "FEBRUARY" -> { returnValue = "02" }
+            "MARCH" -> { returnValue = "03" }
+            "APRIL" -> { returnValue = "04" }
+            "MAY" -> { returnValue = "05" }
+            "JUNE" -> { returnValue = "06" }
+            "JULY" -> { returnValue = "07" }
+            "AUGUST" -> { returnValue = "08" }
+            "SEPTEMBER" -> { returnValue = "09" }
+            "OCTOBER" -> { returnValue = "10" }
+            "NOVEMBER" -> { returnValue = "11" }
+            "DECEMBER" -> { returnValue = "12" }
+        }
+
+        return returnValue
     }
 
     private fun acceptOrDeclineOrder() {
