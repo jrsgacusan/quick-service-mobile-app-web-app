@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,700&display=swap');
 .login-box {
   font-family: 'Poppins';
   position: relative;
@@ -12,11 +12,11 @@
   padding: 10px;
   border-color: #707070;
   -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   top: 50%;
-  LEFT: 50%;
+  left: 50%;
 }
 
 body {
@@ -72,22 +72,27 @@ body {
 
 .button:hover {
   -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 /* The navbar container */
 #topnav {
-  position: relative;
-  background-color: #333;
   overflow: hidden;
+  background-color: #333;
+  padding: auto;
+  font-family: 'Poppins';
+  font-size: 1em;
+  height: 40px;
+  vertical-align: middle;
+  padding-top: 15px;
 }
 
 #topnav a {
-  color: #f2f2f2;
   vertical-align: middle;
+  color: #f2f2f2;
   text-align: center;
+  padding: 14px 16px;
   text-decoration: none;
-  padding: 2em;
 }
 
 #topnav #signoutbutton {
@@ -109,7 +114,7 @@ body {
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 #topnav #topnav-right {
@@ -120,6 +125,15 @@ body {
   background-color: #ddd;
 }
 
+#topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+.active {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
 /* Links - change color on hover */
 #inactive {
   color: white;
@@ -128,7 +142,7 @@ body {
 table {
   position: relative;
   margin: auto;
-  font-family: "Poppins";
+  font-family: 'Poppins';
   border-collapse: collapse;
   width: 100%;
 }
@@ -149,7 +163,8 @@ table a {
   text-decoration: none;
 }
 
-#verifybtn, #notnowbtn {
+#verifybtn,
+#notnowbtn {
   font-weight: bold;
   color: white;
   outline: none;
@@ -163,9 +178,10 @@ table a {
   font-size: 20px;
 }
 
-#verifybtn:hover, #notnowbtn:hover {
+#verifybtn:hover,
+#notnowbtn:hover {
   -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 #verifybtn {
@@ -186,4 +202,14 @@ table a {
 .tableheader :hover {
   background-color: #f2f2f2;
 }
-/*# sourceMappingURL=main.css.map */
+div {
+  width: auto;
+  height: auto;
+  padding: 10px;
+}
+#demographics,
+#demographics2 {
+  width: 80% !important;
+  height: 20% !important;
+  margin-top: 80px;
+}

@@ -1,0 +1,43 @@
+{% extends "web/layout.html" %} {% load static %} {% block body %}
+
+<!--This is for the nav-->
+<center>
+  <nav id="topnav">
+    <a href="{%url 'index'%}">VERIFICATION</a>
+    <a href="{%url 'charts'%}" class="active">CHARTS</a>
+    <a href="{% url 'logout' %}">LOG OUT</a>
+  </nav>
+</center>
+<!--This is for the nav-->
+
+<div>
+  <canvas id="servicesListedPerCategory" width="800" height="250"></canvas>
+</div>
+
+<div style="background-color: WHITE">
+  <canvas id="averagePricePerCategory" width="800" height="250"></canvas>
+</div>
+
+<div>
+  <canvas id="mostRequested" width="800" height="250"></canvas>
+</div>
+
+<div style="background-color: WHITE">
+  <canvas id="lineChart" width="800" height="250"></canvas>
+</div>
+
+{% comment %}
+<div>
+  <canvas id="demographics" width="800" height="250"></canvas>
+</div>
+{% endcomment %}
+
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"
+  integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
+  crossorigin="anonymous"
+></script>
+
+<script src="{% static 'web/charts.js' %}"></script>
+
+{% endblock %}

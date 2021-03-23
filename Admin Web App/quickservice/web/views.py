@@ -34,3 +34,8 @@ def logout_view(request):
     return render(request, "web/login.html", {
         "message": "Logged out."
     })
+
+def charts_view(request):
+    if not request.user.is_authenticated:
+        return HttpResponseRedirect(reverse("login"))
+    return render(request, "web/charts.html")

@@ -9,9 +9,30 @@
     <link rel="stylesheet" href="{% static 'web/main.css' %}">
 </head>
 <body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-database.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-auth.js"></script>
+
+
+<script>
+    var firebaseConfig = {
+        apiKey: "AIzaSyD3xvk1o2I1VZdgsQYUABU96rzlzY3gNjw",
+        authDomain: "course-project-88fec.firebaseapp.com",
+        databaseURL: "https://course-project-88fec.firebaseio.com",
+        projectId: "course-project-88fec",
+        storageBucket: "course-project-88fec.appspot.com",
+        messagingSenderId: "412985801998",
+        appId: "1:412985801998:web:bb774d95fbacbb188aeb5f",
+        measurementId: "G-BZ38VP53KV"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    var database = firebase.database();
+
+</script>
     {% block body %}
-
-
 
     {% endblock %}
 </body>
