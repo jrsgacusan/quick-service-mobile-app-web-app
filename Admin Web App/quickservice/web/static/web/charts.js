@@ -1,3 +1,5 @@
+//formatter
+
 var ref = firebase.database().ref().child('services');
 
 const arrayLabels = [
@@ -194,7 +196,7 @@ ref.on('value', (snap) => {
     if (isNaN(averagea)) {
       average[i] = 0;
     } else {
-      average[i] = averagea;
+      average[i] = averagea.toFixed(2);
     }
 
     if (!isFinite(mostExpensiveArray[i])) {
@@ -621,7 +623,7 @@ ref3.on('value', (snap) => {
   });
 });
 
-//Fifth chart
+//Fifth chart and sixth chart
 var ref4 = firebase.database().ref().child('users');
 ref4.on('value', (snap) => {
   let ageLabel = ['18-24', '25-39', '40-60', '60+'];
@@ -645,4 +647,95 @@ ref4.on('value', (snap) => {
   });
 
   //data
+  dataAge = {
+    datasets: [
+      {
+        data: ageCount,
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.5)',
+          'rgba(54, 162, 235, 0.5)',
+          'rgba(2, 25, 120, 0.5)',
+          'rgba(75, 192, 192, 0.5)',
+        ],
+        hoverOffset: 4,
+      },
+    ],
+    labels: ageLabel,
+  };
+  dataUsers = {
+    datasets: [
+      {
+        data: userIntentCount,
+        backgroundColor: ['rgba(255, 99, 132, 0.5)', 'rgba(54, 162, 235, 0.5)'],
+        hoverOffset: 4,
+      },
+    ],
+    labels: userLabel,
+  };
+  //Options
+  var options = {
+    tooltips: {
+      enabled: true,
+    },
+    title: {
+      display: true,
+      text: 'Age Demographics',
+      fontSize: 24,
+    },
+    plugins: {
+      datalabels: {
+        formatter: (value, ctx) => {
+          let datasets = ctx.chart.data.datasets;
+          if (datasets.indexOf(ctx.dataset) === datasets.length - 1) {
+            let sum = datasets[0].data.reduce((a, b) => a + b, 0);
+            let percentage = Math.round((value / sum) * 100) + '%';
+            return percentage;
+          } else {
+            return percentage;
+          }
+        },
+        color: '#fff',
+      },
+    },
+  };
+  var options2 = {
+    tooltips: {
+      enabled: true,
+    },
+    title: {
+      display: true,
+      text: 'Users and Service Providers Percentage',
+      fontSize: 24,
+    },
+    plugins: {
+      datalabels: {
+        formatter: (value, ctx) => {
+          let datasets = ctx.chart.data.datasets;
+          if (datasets.indexOf(ctx.dataset) === datasets.length - 1) {
+            let sum = datasets[0].data.reduce((a, b) => a + b, 0);
+            let percentage = Math.round((value / sum) * 100) + '%';
+            return percentage;
+          } else {
+            return percentage;
+          }
+        },
+        color: '#fff',
+      },
+    },
+  };
+  //Age
+  var ctx = document.getElementById('demographicsAge').getContext('2d');
+  var myPieChart = new Chart(ctx, {
+    type: 'pie',
+    data: dataAge,
+    options: options,
+  });
+
+  //Users
+  var ctx = document.getElementById('demographicsUser').getContext('2d');
+  var myPieChart = new Chart(ctx, {
+    type: 'pie',
+    data: dataUsers,
+    options: options2,
+  });
 });

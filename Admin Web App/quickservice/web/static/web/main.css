@@ -207,9 +207,9 @@ div {
   height: auto;
   padding: 10px;
 }
-#demographics,
-#demographics2 {
-  width: 80% !important;
-  height: 20% !important;
-  margin-top: 80px;
+.float-child {
+  width: 47%;
+  float: left;
+  height: auto;
+  margin: 0;
 }

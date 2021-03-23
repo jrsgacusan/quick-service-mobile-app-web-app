@@ -26,16 +26,23 @@
   <canvas id="lineChart" width="800" height="250"></canvas>
 </div>
 
-{% comment %}
-<div>
-  <canvas id="demographics" width="800" height="250"></canvas>
+<div class="float-container">
+  <div class="float-child">
+    <canvas id="demographicsAge" width="400" height="250"></canvas>
+  </div>
+  <div class="float-child">
+    <canvas id="demographicsUser" width="400" height="250"></canvas>
+  </div>
 </div>
-{% endcomment %}
 
 <script
   src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"
   integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
   crossorigin="anonymous"
+></script>
+<script
+  type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.4.0/dist/chartjs-plugin-datalabels.min.js"
 ></script>
 
 <script src="{% static 'web/charts.js' %}"></script>
