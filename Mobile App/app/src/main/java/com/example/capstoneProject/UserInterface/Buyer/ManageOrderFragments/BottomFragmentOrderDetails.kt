@@ -120,6 +120,7 @@ class BottomFragmentOrderDetails(orderPassed: Order) : BottomSheetDialogFragment
                     ref.removeValue()
                     val anotherRef = FirebaseDatabase.getInstance().getReference("booked_to/$bookedTo/$orderUid")
                     anotherRef.removeValue()
+                    Toast.makeText(v.context, "Order cancelled.", Toast.LENGTH_SHORT).show()
                 }
                 .setNegativeButton("Cancel") { dialog, _ ->
                     dialog.cancel()

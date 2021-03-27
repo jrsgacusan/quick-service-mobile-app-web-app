@@ -1,18 +1,20 @@
 package com.example.capstoneProject.UserInterface.Dialogs
 
+import android.app.Activity
 import android.app.AlertDialog
 import android.content.Intent
 import android.widget.Button
-import androidx.fragment.app.Fragment
-import com.example.capstoneProject.UserInterface.Buyer.SendRequirementActivity
+import com.example.capstoneProject.UserInterface.General.SendRequirementActivity
 import com.example.capstoneProject.R
+import com.example.capstoneProject.UserInterface.General.ChooseActivity
 
-class VerifyDialog(activity: Fragment) {
-    private val activity: Fragment? = activity
+class VerifyDialog(activity: Activity, mode: String) {
+    private val activity: Activity? = activity
     private var dialog: AlertDialog? = null
+    private val modeValue: String = mode
 
     fun showDialog() {
-        val builder = AlertDialog.Builder(activity!!.context)
+        val builder = AlertDialog.Builder(activity!!)
         val inflater = activity.layoutInflater
         val view = inflater.inflate(R.layout.dialog_verify_as_service_provider, null)
         builder.setView(view)
@@ -21,7 +23,8 @@ class VerifyDialog(activity: Fragment) {
         val submitButton = view.findViewById<Button>(R.id.submitButton_dialog_verify)
         val cancelButton = view.findViewById<Button>(R.id.cancelButton_dialog_verify)
         submitButton.setOnClickListener {
-            val intent = Intent(activity.context, SendRequirementActivity::class.java)
+            val intent = Intent(activity, SendRequirementActivity::class.java)
+            intent.putExtra(ChooseActivity.TAG, modeValue)
             activity.startActivity(intent)
             dismissDialog()
 

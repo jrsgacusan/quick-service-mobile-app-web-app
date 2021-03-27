@@ -30,6 +30,10 @@
         android:icon="@drawable/ic_profile_settings"
         />
     <item
+        android:id="@+id/changeMode"
+        android:title="Change Mode"
+        />
+    <item
         android:id="@+id/logOut"
         android:title="Log out"
         android:icon="@drawable/ic_logout"

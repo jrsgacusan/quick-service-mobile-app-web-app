@@ -641,9 +641,10 @@ ref4.on('value', (snap) => {
     object.age >= 40 && object.age <= 60 ? (ageCount[2] += 1) : null;
     object.age >= 61 ? (ageCount[3] += 1) : null;
 
-    object.verified == 'VERIFIED'
+    object.verifiedClient == 'VERIFIED' ? (userIntentCount[0] += 1) : null;
+    object.verifiedServiceProvider == 'VERIFIED'
       ? (userIntentCount[1] += 1)
-      : (userIntentCount[0] += 1);
+      : null;
   });
 
   //data

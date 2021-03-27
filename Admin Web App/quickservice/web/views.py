@@ -11,6 +11,11 @@ def index(request):
         return HttpResponseRedirect(reverse("login"))
     return render(request, "web/index.html")
 
+def verify_client_view(request):
+    if not request.user.is_authenticated:
+        return HttpResponseRedirect(reverse("login"))
+    return render(request, "web/verifyclient.html")
+
 
 
 def login_view(request):
@@ -39,3 +44,5 @@ def charts_view(request):
     if not request.user.is_authenticated:
         return HttpResponseRedirect(reverse("login"))
     return render(request, "web/charts.html")
+
+

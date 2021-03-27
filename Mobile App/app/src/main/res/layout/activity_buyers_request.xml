@@ -9,13 +9,12 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolBar_activityBuyersRequest"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
-        android:elevation="2dp"
+        android:background="@android:color/transparent"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton_requestsss"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -45,10 +44,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:alpha=".3"
-        android:text="No buyers request."
+        android:text="No client request."
         app:layout_constraintBottom_toBottomOf="@+id/hideThisImageView_activityBuyersRequest"
         app:layout_constraintEnd_toEndOf="@+id/hideThisImageView_activityBuyersRequest"
         app:layout_constraintStart_toStartOf="@+id/hideThisImageView_activityBuyersRequest"
         app:layout_constraintTop_toBottomOf="@+id/hideThisImageView_activityBuyersRequest" />
+
+    <ImageButton
+        android:id="@+id/imageButton_requestsss"
+        android:layout_width="50dp"
+        android:layout_height="0dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toTopOf="@+id/serviceRequestRecyclerView_activityBuyersRequest"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_message" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

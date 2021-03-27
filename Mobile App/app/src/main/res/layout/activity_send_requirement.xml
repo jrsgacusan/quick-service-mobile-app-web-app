@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backGroundShadow"
-    tools:context=".UserInterface.Buyer.SendRequirementActivity">
+    tools:context=".UserInterface.General.SendRequirementActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_sendRequirementsActivity"
@@ -27,6 +27,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="16dp"
         android:background="@drawable/rounded_buttons"
@@ -35,7 +36,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/certification_activitySendRequirements" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/selfieActivitySendRequirements"
@@ -122,7 +124,6 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginBottom="20dp"
         app:cardBackgroundColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/submitButton_activitySendRequirements"
         app:layout_constraintEnd_toEndOf="parent"

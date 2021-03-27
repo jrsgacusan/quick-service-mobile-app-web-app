@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".UserInterface.General.ChooseActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/upper"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:paddingStart="15dp"
+        android:paddingLeft="15dp"
+        android:paddingEnd="15dp"
+        android:paddingBottom="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/clientButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_buttons"
+            android:text="CLIENT MODE"
+            android:textColor="#F8F8F8"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="400dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/textView35"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/clientimage" />
+
+        <TextView
+            android:id="@+id/textView35"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="5dp"
+            android:text="BROWSE OUR VARIOUS SERVICE CATEGORIES, AND BOOK WHICH SERVICE YOU WOULD NEED"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/clientButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+        <ImageButton
+            android:id="@+id/logoutAgad"
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_back" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottom"
+        android:layout_width="411dp"
+        android:layout_height="364dp"
+        android:paddingStart="15dp"
+        android:paddingLeft="15dp"
+        android:paddingEnd="15dp"
+        android:paddingBottom="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/upper">
+
+        <Button
+            android:id="@+id/spButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_buttons_seller"
+            android:text="SERVICE PROVIDER MODE"
+            android:textColor="#F3F1F1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="400dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/textView28"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/offerservice" />
+
+        <TextView
+            android:id="@+id/textView28"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="5dp"
+            android:text="LIST YOUR SERVICES AND EARN CASH THROUGH THE MOBILE APPLICATION"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/spButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

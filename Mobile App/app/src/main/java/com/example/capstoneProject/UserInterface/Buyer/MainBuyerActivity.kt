@@ -31,6 +31,7 @@ import com.example.capstoneProject.UserInterface.Messages.MessagesActivity
 import com.example.capstoneProject.Models.User
 import com.example.capstoneProject.UserInterface.General.ProfileSettingsActivity
 import com.example.capstoneProject.R
+import com.example.capstoneProject.UserInterface.General.ChooseActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
@@ -65,7 +66,7 @@ class BuyerActivity : AppCompatActivity() {
 
 
         verifyUserIsLoggedIn()
-        fetchCurrentUser()
+
 
         bottomNavigationBuyer = findViewById(R.id.bottomNavigation)
         setSupportActionBar(findViewById(R.id.toolBar))
@@ -146,22 +147,7 @@ class BuyerActivity : AppCompatActivity() {
     }
 
 
-    private fun fetchCurrentUser() {
-        if (FirebaseAuth.getInstance().currentUser != null) {
-            val uid = FirebaseAuth.getInstance().currentUser!!.uid
-            val ref = FirebaseDatabase.getInstance().getReference("/users/$uid")
-            ref.addListenerForSingleValueEvent(object : ValueEventListener {
-                override fun onDataChange(snapshot: DataSnapshot) {
-                    currentUser = snapshot.getValue(User::class.java)
-                }
 
-                override fun onCancelled(error: DatabaseError) {
-                }
-
-            })
-        }
-
-    }
 
 
     //Options Menu on the upper right side
@@ -190,6 +176,9 @@ class BuyerActivity : AppCompatActivity() {
             }
             R.id.logOut -> {
                 showDialogFun()
+            }
+            R.id.changeMode -> {
+                startActivity(Intent(this, ChooseActivity::class.java))
             }
 
         }

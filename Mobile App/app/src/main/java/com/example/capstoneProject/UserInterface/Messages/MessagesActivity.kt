@@ -49,7 +49,7 @@ class MessagesActivity : AppCompatActivity() {
         //map everything here
         toolbar = findViewById(R.id.toolbar_activityMessages)
         actionButton = findViewById(R.id.actionButton_activityMessages)
-        recyclerView = findViewById(R.id.recylclerView_activityMessages)
+        recyclerView = findViewById(R.id.recycelrView_requests)
         recyclerView.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
         hideThisTextView = findViewById(R.id.hideThisTextView_activityMessages)
         hideThisImageView = findViewById(R.id.hideThisImageView_activityMessages)

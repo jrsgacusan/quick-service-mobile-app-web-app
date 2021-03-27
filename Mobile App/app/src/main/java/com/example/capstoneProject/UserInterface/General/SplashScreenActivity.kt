@@ -19,13 +19,15 @@ class SplashScreenActivity : AppCompatActivity() {
         imageView.alpha = 0f
         imageView.animate().setDuration(5000).alpha(1f).withEndAction {
             val currentUser = FirebaseAuth.getInstance().currentUser
+            //no user logged in
             if (currentUser == null) {
                 val i = Intent(this, LoginActivity::class.java)
                 startActivity(i)
                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
                 finish()
+                // THere is a logged in user
             } else {
-                val i = Intent(this, BuyerActivity::class.java)
+                val i = Intent(this, ChooseActivity::class.java)
                 startActivity(i)
                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
                 finish()

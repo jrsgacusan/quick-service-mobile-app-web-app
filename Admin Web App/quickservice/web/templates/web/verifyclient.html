@@ -3,12 +3,14 @@
 <!--This is for the nav-->
 <center>
   <nav id="topnav">
-    <a href="{%url 'index'%}" class="active">SERVICE PROVIDER VERIFICATION</a>
-    <a href="{%url 'verifyclient'%}">CLIENT VERIFICATION</a>
+    <a href="{%url 'index'%}">SERVICE PROVIDER VERIFICATION</a>
+    <a href="{%url 'verifyclient'%}" class="active">CLIENT VERIFICATION</a>
     <a href="{%url 'charts'%}">CHARTS</a>
     <a href="{% url 'logout' %}">LOG OUT</a>
   </nav>
 </center>
+<!--This is for the nav-->
+
 <!--This is for the nav-->
 
 <table id="">
@@ -18,22 +20,20 @@
     <td>Contact Number</td>
     <td>Selfie Image</td>
     <td>Valid ID</td>
-    <td>Certificate/Permit</td>
     <td>Action</td>
   </thead>
   <tbody id="tableBody"></tbody>
 </table>
 
 <script>
-  //**********************VERIFY SERVICE PROVIDERS*********************//
-  var ref = firebase.database().ref().child('for-verification');
+  //**********************VERIFY CLIENTS*********************//
+  var ref = firebase.database().ref().child('for-verification-client');
   ref.on('child_added', (snap) => {
     var name = snap.child('name').val();
     var age = snap.child('age').val();
     var number = snap.child('number').val();
     var selfieImage = snap.child('selfie').val();
     var validId = snap.child('id').val();
-    var certificate = snap.child('docu').val();
     var uid = snap.child('uid').val();
 
     $('#tableBody').append(
@@ -53,9 +53,6 @@
         "<td><a href='" +
         validId +
         "'>Click here</a></td>" +
-        "<td><a href='" +
-        certificate +
-        "'>Click here</a></td>" +
         "<td><button value='" +
         uid +
         "' id='verifybtn' onclick='verify(this.value)'>Verify</button><button value='" +
@@ -70,7 +67,7 @@
       .ref('users/' + val)
       .update(
         {
-          verifiedServiceProvider: 'VERIFIED',
+          verifiedClient: 'VERIFIED',
         },
         (error) => {
           if (error) {
@@ -79,7 +76,7 @@
             //successful
             firebase
               .database()
-              .ref('for-verification/' + val)
+              .ref('for-verification-client/' + val)
               .remove();
             location.reload();
             alert('Account ' + val + ' is now verified.');
@@ -93,7 +90,7 @@
       .ref('users/' + val)
       .update(
         {
-          verifiedServiceProvider: 'TRY_AGAIN',
+          verifiedClient: 'TRY_AGAIN',
         },
         (error) => {
           if (error) {
@@ -102,7 +99,7 @@
             //successful
             firebase
               .database()
-              .ref('for-verification/' + val)
+              .ref('for-verification-client/' + val)
               .remove();
             location.reload();
             alert('Account ' + val + ' is not verified.');

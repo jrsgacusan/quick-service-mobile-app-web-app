@@ -1,6 +1,6 @@
 @file:Suppress("DEPRECATION")
 
-package com.example.capstoneProject.UserInterface.Buyer
+package com.example.capstoneProject.UserInterface.General
 
 import android.content.Intent
 import android.content.res.ColorStateList
@@ -12,6 +12,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.cardview.widget.CardView
+import androidx.core.view.isGone
 import com.example.capstoneProject.UserInterface.Dialogs.LoadingDialog
 import com.example.capstoneProject.Models.User
 import com.example.capstoneProject.R
@@ -59,6 +60,9 @@ class SendRequirementActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_send_requirement)
 
+        val mode = intent.getStringExtra(ChooseActivity.TAG)
+
+
         tbar = findViewById(R.id.toolbar_sendRequirementsActivity)
         submitButton = findViewById(R.id.submitButton_activitySendRequirements)
         id = findViewById(R.id.validId_activitySendRequirements)
@@ -67,6 +71,7 @@ class SendRequirementActivity : AppCompatActivity() {
         idImageView = findViewById(R.id.validIdImageView_activitySendRequiresments)
         selfieImageView = findViewById(R.id.imageViewselfieImageView_activitySendRequirements)
         docuImageView = findViewById(R.id.imageViewdocu__activitySendRequirements)
+        checkVerification(mode!!)
 
 
         tbar.setNavigationOnClickListener {
@@ -85,12 +90,27 @@ class SendRequirementActivity : AppCompatActivity() {
         }
 
         submitButton.setOnClickListener {
-
-            checkImages()
+            if (mode == ChooseActivity.SP_VERIFICATION) {
+                checkImages()
+            } else {
+                checkImagesForClient()
+            }
 
         }
 
 
+    }
+
+    private fun checkImagesForClient() {
+        if (idImage != null && selfieImage != null) {
+            uploadToFirebaseDatabaseForClient()
+        } else {
+            Toast.makeText(this, "Submit the requirements needed.", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun checkVerification(mode: String){
+        docu.isGone = mode != ChooseActivity.SP_VERIFICATION
     }
 
     private fun changeColors() {
@@ -109,7 +129,7 @@ class SendRequirementActivity : AppCompatActivity() {
     }
 
     private fun checkImages() {
-        if (idImage != null && selfieImage != null && docuImage != null) {
+        if (idImage != null && selfieImage != null && docuImage!= null) {
             uploadToFirebaseDatabase()
         } else {
             Toast.makeText(this, "Submit the requirements needed.", Toast.LENGTH_SHORT).show()
@@ -144,6 +164,75 @@ class SendRequirementActivity : AppCompatActivity() {
             docuImage = data!!.extras!!.get("data") as Bitmap
             changeColors()
         }
+    }
+    private fun uploadToFirebaseDatabaseForClient() {
+        val currentUserUid = FirebaseAuth.getInstance().currentUser!!.uid
+        val selfieName = UUID.randomUUID().toString()
+        val IDName = UUID.randomUUID().toString()
+
+
+        val streamSelfie = ByteArrayOutputStream()
+        selfieImage!!.compress(Bitmap.CompressFormat.JPEG, 100, streamSelfie)
+        val streamId = ByteArrayOutputStream()
+        idImage!!.compress(Bitmap.CompressFormat.JPEG, 100, streamId)
+
+
+        val selfieByte: ByteArray = streamSelfie.toByteArray()
+        val idByte: ByteArray = streamId.toByteArray()
+
+
+        val ref = FirebaseStorage.getInstance().getReference("/verification-images-client/$currentUserUid/selfie")
+        dialog.startLoadingAnimation()
+        ref.putBytes(selfieByte)
+                .addOnSuccessListener {
+                    ref.downloadUrl.addOnSuccessListener {
+                        saveToDatabaseForClient(it.toString(), SELFIE)
+                    }
+                }
+
+        val refTwo = FirebaseStorage.getInstance().getReference("/verification-images-client/$currentUserUid/id")
+        dialog.startLoadingAnimation()
+        refTwo.putBytes(idByte)
+                .addOnSuccessListener {
+                    refTwo.downloadUrl.addOnSuccessListener {
+                        saveToDatabaseForClient(it.toString(), ID)
+                    }
+                }
+
+
+
+
+    }
+
+    private fun saveToDatabaseForClient(url: String, type: Int) {
+        val currentUserUid = FirebaseAuth.getInstance().currentUser!!.uid
+        val ref = FirebaseDatabase.getInstance().getReference("for-verification-client/$currentUserUid")
+        val accountRef = FirebaseDatabase.getInstance().getReference("/users/$currentUserUid")
+        accountRef.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val user = snapshot.getValue(User::class.java)!!
+
+                ref.child("number").setValue(user.mobileNumber)
+                ref.child("uid").setValue(user.uid)
+                ref.child("image").setValue(user.profileImageUrl)
+                ref.child("name").setValue("${user.firstName} ${user.lastName}")
+                ref.child("age").setValue(user.age)
+
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+            }
+        })
+        if (type == SELFIE) {
+            ref.child("selfie").setValue(url)
+        } else if (type == ID) {
+            ref.child("id").setValue(url)
+        }
+        accountRef.child("/verifiedClient").setValue("PENDING")
+
+        dialog.dismissDialog()
+        finish()
+        Toast.makeText(this, "Requirement submitted. Wait for account to be verified by the admin. Thank you.", Toast.LENGTH_LONG).show()
     }
 
 
@@ -220,7 +309,7 @@ class SendRequirementActivity : AppCompatActivity() {
         } else if (type == DOCU) {
             ref.child("docu").setValue(url)
         }
-        accountRef.child("/verified").setValue("PENDING")
+        accountRef.child("/verifiedServiceProvider").setValue("PENDING")
 
         dialog.dismissDialog()
         finish()

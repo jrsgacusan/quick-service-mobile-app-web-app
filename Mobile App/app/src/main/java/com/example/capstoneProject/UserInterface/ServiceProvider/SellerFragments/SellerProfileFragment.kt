@@ -29,7 +29,6 @@ import com.squareup.picasso.Picasso
 
 class SellerProfileFragment : Fragment() {
 
-    lateinit var switchBtn: Switch
     val sellerServices = SellerServicesFragment()
     lateinit var profileImage: ImageView
     lateinit var nameTextView: TextView
@@ -48,7 +47,6 @@ class SellerProfileFragment : Fragment() {
 
         //map the views of the layout file
         aboutMeAsASellerCardView = v.findViewById(R.id.seller_aboutMeCardView)
-        switchBtn = v.findViewById<Switch>(R.id.seller_modeSwitch)
         services = v.findViewById<CardView>(R.id.seller_myServicesCardView)
         profileImage = v.findViewById(R.id.profileImage_fragmentSellerProfile)
         nameTextView = v.findViewById(R.id.userName_fragmentSellerProfile)
@@ -59,10 +57,7 @@ class SellerProfileFragment : Fragment() {
 
         //Add listeners
         //Switch button view
-        switchBtn.setOnClickListener {
-            changeMode(switchBtn.isChecked)
-            Toast.makeText(this.context, "Switched to Buyer Mode", Toast.LENGTH_LONG).show()
-        }
+
         //Services card view
         services.setOnClickListener {
             val transaction = activity?.supportFragmentManager?.beginTransaction()
@@ -104,16 +99,6 @@ class SellerProfileFragment : Fragment() {
     }
 
 
-    //Change the mode based from the switch view
-    private fun changeMode(state: Boolean) {
-        if (state == false) {
-            switchBtn.isChecked = true
-            val intent = Intent(this.context, BuyerActivity::class.java)
-            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
-            startActivity(intent)
-            ProfileFragment.isBuyerMode = false
-        }
-    }
 
     companion object;
 

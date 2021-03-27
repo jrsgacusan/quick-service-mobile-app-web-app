@@ -14,6 +14,7 @@ import com.example.capstoneProject.UserInterface.Messages.MessagesActivity
 import com.example.capstoneProject.Models.Order
 import com.example.capstoneProject.UserInterface.General.ProfileSettingsActivity
 import com.example.capstoneProject.R
+import com.example.capstoneProject.UserInterface.General.ChooseActivity
 import com.example.capstoneProject.UserInterface.ServiceProvider.SellerActivities.CreateServicesActivity
 import com.example.capstoneProject.UserInterface.ServiceProvider.SellerFragments.SellerManageFragment
 import com.example.capstoneProject.UserInterface.ServiceProvider.SellerFragments.SellerNotificationsFragment
@@ -159,6 +160,9 @@ class SellerActivity : AppCompatActivity() {
                 alert.show()
 
 
+            }
+            R.id.changeMode -> {
+                startActivity(Intent(this, ChooseActivity::class.java))
             }
 
         }

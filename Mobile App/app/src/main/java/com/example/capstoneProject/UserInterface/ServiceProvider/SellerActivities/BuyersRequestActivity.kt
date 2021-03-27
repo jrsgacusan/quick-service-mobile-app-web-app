@@ -1,6 +1,8 @@
 package com.example.capstoneProject.UserInterface.ServiceProvider.SellerActivities
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -12,6 +14,7 @@ import com.example.capstoneProject.GroupieViews.ServiceRequestItem
 import com.example.capstoneProject.Handlers.ServiceRequestHandler
 import com.example.capstoneProject.Models.ServiceRequest
 import com.example.capstoneProject.R
+import com.example.capstoneProject.UserInterface.Messages.MessagesRequestForSP
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -28,6 +31,7 @@ class BuyersRequestActivity : AppCompatActivity() {
     private lateinit var hideThisTextView: TextView
     private lateinit var hideThisImageView: ImageView
     var adapter = GroupAdapter<ViewHolder>()
+    private lateinit var messagesBtn: ImageButton
 
     companion object {
         var serviceRequestToBeViewed: ServiceRequest? = null
@@ -37,13 +41,14 @@ class BuyersRequestActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_buyers_request)
         //Map and initilize everything here
+        messagesBtn = findViewById(R.id.imageButton_requestsss)
         toolbar = findViewById(R.id.toolBar_activityBuyersRequest)
         serviceRequestRecyclerView = findViewById(R.id.serviceRequestRecyclerView_activityBuyersRequest)
         serviceRequestArrayList = ArrayList()
         hideThisTextView = findViewById(R.id.hideThisTextView_activityBuyersRequest)
         hideThisImageView = findViewById(R.id.hideThisImageView_activityBuyersRequest)
         serviceRequestRecyclerView.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
-        toolbar.title = "Buyers' Request"
+        toolbar.title = "Client Request"
         toolbar.setNavigationIcon(R.drawable.ic_back)
         toolbar.setNavigationOnClickListener {
             finish()
@@ -52,6 +57,11 @@ class BuyersRequestActivity : AppCompatActivity() {
         val adapter = GroupAdapter<ViewHolder>()
         serviceRequestRecyclerView.adapter = adapter
         fetchServiceRequests()
+
+        messagesBtn.setOnClickListener {
+            //Go to different activity
+            startActivity(Intent(this, MessagesRequestForSP::class.java))
+        }
     }
 
     private fun fetchServiceRequests() {

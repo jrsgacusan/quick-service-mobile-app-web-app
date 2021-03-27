@@ -140,6 +140,8 @@ class BottomFragmentCreateOrder : BottomSheetDialogFragment() {
         var day = ""
         if (dayOfMonthPicked <= 9){
             day = "0$dayOfMonthPicked"
+        } else {
+            day = currentDay.toString()
         }
 
         dateTextView.text = "${month(monthPicked)} $day, $yearPicked"

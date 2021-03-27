@@ -61,12 +61,12 @@
             app:layout_constraintStart_toEndOf="@+id/UpperPart"
             app:layout_constraintTop_toBottomOf="@+id/UpperPart">
 
-            <Switch
-                android:id="@+id/seller_modeSwitch"
+            <TextView
+                android:id="@+id/textView10"
                 android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:text="SERVICE PROVIDER"
-                android:textSize="18sp"
+                android:layout_height="wrap_content"
+                android:text="CLIENT MODE"
+                android:textSize="24sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

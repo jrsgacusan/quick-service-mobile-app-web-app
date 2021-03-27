@@ -32,7 +32,7 @@
         app:srcCompat="@drawable/ic_addd" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recylclerView_activityMessages"
+        android:id="@+id/recycelrView_requests"
         android:layout_width="match_parent"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:layout_height="0dp"
@@ -46,8 +46,8 @@
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:alpha=".3"
-        app:layout_constraintBottom_toBottomOf="@+id/recylclerView_activityMessages"
-        app:layout_constraintEnd_toEndOf="@+id/recylclerView_activityMessages"
+        app:layout_constraintBottom_toBottomOf="@+id/recycelrView_requests"
+        app:layout_constraintEnd_toEndOf="@+id/recycelrView_requests"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar_activityMessages"
         app:srcCompat="@drawable/ic_message" />

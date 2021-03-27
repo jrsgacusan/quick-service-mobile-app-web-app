@@ -3,8 +3,6 @@ package com.example.capstoneProject.UserInterface.Buyer.BuyerActivities
 import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
-import android.view.ContextMenu
-import android.view.MenuItem
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
@@ -13,19 +11,18 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.example.capstoneProject.GroupieViews.ManageRequestItem
-import com.example.capstoneProject.GroupieViews.ServiceCreatedItem
 import com.example.capstoneProject.Handlers.ServiceRequestHandler
 import com.example.capstoneProject.Models.ServiceRequest
+import com.example.capstoneProject.Models.User
 import com.example.capstoneProject.R
+import com.example.capstoneProject.UserInterface.Messages.RequestMessagesActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import com.xwray.groupie.Group
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.ViewHolder
-import java.util.ArrayList
 
 
 class ManageRequestActivity : AppCompatActivity() {
@@ -40,6 +37,7 @@ class ManageRequestActivity : AppCompatActivity() {
 
     companion object {
         var serviceRequestGettingEdited: ServiceRequest? = null
+        const val TAG = "Whateveritis"
     }
 
 
@@ -104,9 +102,11 @@ class ManageRequestActivity : AppCompatActivity() {
         val pause = popupMenu.menu.findItem(R.id.pause)
         val setAsActive = popupMenu.menu.findItem(R.id.setAsActive)
         val preview = popupMenu.menu.findItem(R.id.preview)
+        val messages = popupMenu.menu.findItem(R.id.checkMessages)
         pause.isVisible = false
         setAsActive.isVisible = false
         preview.isVisible = false
+        messages.isVisible = true
 
         popupMenu.setOnMenuItemClickListener {  menu ->
             when(menu.itemId){
@@ -119,11 +119,43 @@ class ManageRequestActivity : AppCompatActivity() {
                     dialogBuilder.setMessage("Do you want to delete this request?")
                             .setCancelable(true)
                             .setPositiveButton("Continue", DialogInterface.OnClickListener { _, _ ->
+                                //Code here
+                                //delete from service_request
                                 val ref = FirebaseDatabase.getInstance().getReference("/service_requests/${requestClicked.uid}")
                                 ref.removeValue()
                                         .addOnCompleteListener {
                                             Toast.makeText(view.context, "Request Deleted", Toast.LENGTH_SHORT).show()
                                         }
+                                //Delete latest_messages_request
+                                val refLmr = FirebaseDatabase.getInstance().getReference("/latest_messages_request")
+                                refLmr.addListenerForSingleValueEvent(object: ValueEventListener{
+                                    override fun onDataChange(snapshot: DataSnapshot) {
+                                        snapshot.children.forEach { user ->
+                                            val refLmr2 = FirebaseDatabase.getInstance().getReference("/latest_messages_request/${user.key}/${requestClicked.uid}")
+                                            refLmr2.removeValue()
+                                        }
+                                    }
+
+                                    override fun onCancelled(error: DatabaseError) {
+
+                                    }
+                                })
+                                //Delete from request_messages
+                                val refRm = FirebaseDatabase.getInstance().getReference("/request_messages")
+                                refRm.addListenerForSingleValueEvent(object: ValueEventListener{
+                                    override fun onDataChange(snapshot: DataSnapshot) {
+                                        snapshot.children.forEach { user ->
+                                            val refRm2 = FirebaseDatabase.getInstance().getReference("/request_messages/${user.key}/${requestClicked.uid}")
+                                            refRm2.removeValue()
+                                        }
+                                    }
+
+                                    override fun onCancelled(error: DatabaseError) {
+
+                                    }
+                                })
+
+
                             })
                             .setNegativeButton("Cancel", DialogInterface.OnClickListener { dialog, _ ->
                                 dialog.cancel()
@@ -131,6 +163,12 @@ class ManageRequestActivity : AppCompatActivity() {
                     val alert = dialogBuilder.create()
                     alert.setTitle("Delete")
                     alert.show()
+                }
+                R.id.checkMessages -> {
+                    //Open Message for this specific request
+                    val intent = Intent(this, RequestMessagesActivity::class.java)
+                    intent.putExtra(TAG,requestClicked )
+                    startActivity(intent)
                 }
             }
             true

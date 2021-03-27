@@ -21,13 +21,14 @@
 
     <TextView
         android:id="@+id/usernameTextView_messagesRow"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:fontFamily="sans-serif-black"
         android:text="User Name"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/messageTextView_messagesRow"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView_messagesrow"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed" />

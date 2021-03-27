@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-black"
-        android:text="UNVERFIED SERVICE PROVIDER"
+        android:text="UNVERIFIED"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -29,9 +29,9 @@
 
     <com.codesgood.views.JustifiedTextView
         android:id="@+id/textView29"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Verify your account now to use it as a Service Provider. "
+        android:text="Send verification to use this feature."
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView30" />
@@ -40,7 +40,7 @@
         android:id="@+id/textView9"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Submit the requirements needed and wait until your account is verified by the administrators. Once the account is verified, you can now use the Service Provider Mode. Service Provider Mode allows you to create services, manage service orders, and view list of service requests posted by our users."
+        android:text="Submit the requirements needed and wait until your account is verified by the administrators. For Service Providers, please submit selfie image, valid ID, and certificate. For Clients, please submit a selfie image and Valid ID."
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"

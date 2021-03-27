@@ -2,14 +2,17 @@ package com.example.capstoneProject.UserInterface.ServiceProvider.SellerActiviti
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import com.example.capstoneProject.Models.ServiceRequest
 import com.example.capstoneProject.UserInterface.Messages.ChatLogActivity
 import com.example.capstoneProject.Models.User
 import com.example.capstoneProject.R
+import com.example.capstoneProject.UserInterface.Messages.RequestChatLogActivity
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.database.DataSnapshot
@@ -27,11 +30,13 @@ class BottomShowRequestFragment : BottomSheetDialogFragment() {
     private lateinit var floatButton: FloatingActionButton
     override fun getTheme(): Int = R.style.AppBottomSheetDialogTheme
 
+    var request: ServiceRequest = BuyersRequestActivity.serviceRequestToBeViewed!!
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
+
         // Inflate the layout for this fragment
         v = inflater.inflate(R.layout.fragment_bottom_show_request, container, false)
         imageView = v.findViewById(R.id.imageVIew_fragmentBottomShowRequest)
@@ -53,7 +58,9 @@ class BottomShowRequestFragment : BottomSheetDialogFragment() {
         textView.text = "${BuyersRequestActivity.serviceRequestToBeViewed!!.description}"
 
         floatButton.setOnClickListener {
-            fetchTheUserWhoPostedTheRequest()
+            goToRequestChatLog()
+
+
         }
 
 
@@ -64,23 +71,47 @@ class BottomShowRequestFragment : BottomSheetDialogFragment() {
         return v
     }
 
-    private fun fetchTheUserWhoPostedTheRequest() {
+    private fun goToRequestChatLog() {
+
+        //fetch the Model from Firebase
         val ref = FirebaseDatabase.getInstance().getReference("users/${BuyersRequestActivity.serviceRequestToBeViewed!!.userUid}")
         ref.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                val toUser = snapshot.getValue(User::class.java)
-                val intent = Intent(v.context, ChatLogActivity::class.java)
-                intent.putExtra("user", toUser)
+                val user = snapshot.getValue(User::class.java)
+                val intent = Intent(v.context, RequestChatLogActivity::class.java)
+                intent.putExtra(RequestChatLogActivity.USER_EXTRA_TAG, user)
+                intent.putExtra(RequestChatLogActivity.REQUEST_EXTRA_TAG, request)
                 startActivity(intent)
+                Log.i("NOTHINGSAMPLEONLY", "onDataChange: $user")
             }
 
             override fun onCancelled(error: DatabaseError) {
-
             }
-
         })
 
+
+
+
+
     }
+
+//    private fun fetchTheUserWhoPostedTheRequest() {
+//        val ref = FirebaseDatabase.getInstance().getReference("users/${BuyersRequestActivity.serviceRequestToBeViewed!!.userUid}")
+//        ref.addListenerForSingleValueEvent(object : ValueEventListener {
+//            override fun onDataChange(snapshot: DataSnapshot) {
+//                val toUser = snapshot.getValue(User::class.java)
+//                val intent = Intent(v.context, ChatLogActivity::class.java)
+//                intent.putExtra("user", toUser)
+//                startActivity(intent)
+//            }
+//
+//            override fun onCancelled(error: DatabaseError) {
+//
+//            }
+//
+//        })
+//
+//    }
 
 
 }

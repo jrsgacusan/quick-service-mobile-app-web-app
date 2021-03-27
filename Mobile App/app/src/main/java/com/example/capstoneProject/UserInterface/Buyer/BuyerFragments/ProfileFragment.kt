@@ -1,29 +1,20 @@
 package com.example.capstoneProject.UserInterface.Buyer.BuyerFragments
 
-import android.content.DialogInterface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.Switch
 import android.widget.TextView
-import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import com.example.capstoneProject.*
 import com.example.capstoneProject.UserInterface.Buyer.BuyerActivity
-import com.example.capstoneProject.UserInterface.Buyer.SendRequirementActivity
 import com.example.capstoneProject.UserInterface.Buyer.bottomNavigationBuyer
 import com.example.capstoneProject.UserInterface.Buyer.BuyerActivities.ManageRequestActivity
 import com.example.capstoneProject.UserInterface.Buyer.BuyerActivities.RequestActivity
-import com.example.capstoneProject.UserInterface.Dialogs.VerifyDialog
 import com.example.capstoneProject.Handlers.UserHandler
 import com.example.capstoneProject.Models.User
-import com.example.capstoneProject.UserInterface.General.LoginActivity
-import com.example.capstoneProject.UserInterface.ServiceProvider.SellerActivity
-import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -35,7 +26,7 @@ import android.content.Intent as Intent1
 
 class ProfileFragment : Fragment() {
 
-    lateinit var switch: Switch
+
 
     //Used to fetch data
     var userHandler = UserHandler()
@@ -64,19 +55,12 @@ class ProfileFragment : Fragment() {
         // Inflate the layout for this fragment
         v = inflater.inflate(R.layout.fragment_profile, container, false)
         //map the views of the layout file
-        switch = v.findViewById<Switch>(R.id.seller_modeSwitch)
         profileImage = v.findViewById(R.id.profileImage_fragmentBuyerProfile)
         name = v.findViewById(R.id.userName_fragmentBuyerProfile)
 
         postRequestCardView = v.findViewById(R.id.postARequest_cardView_fragmentProfile)
         manageRequestCardView = v.findViewById(R.id.manageRequestCardView_fragmentProfile)
         //Apply listeners
-        //Switch button to change the mode.
-        switch.setOnClickListener {
-            checkIfVerified()
-//            trialMode()
-
-        }
         //Post Request
         postRequestCardView.setOnClickListener {
             val intent = Intent1(v.context, RequestActivity::class.java)
@@ -96,79 +80,8 @@ class ProfileFragment : Fragment() {
         return v
     }
 
-    private fun trialMode() {
 
-        val dialogBuilder = AlertDialog.Builder(v.context)
-        dialogBuilder.setMessage("Originally, when switching from Buyer to a Service Provider, we require 3 requirements from the user." +
-                "But since we are gathering feedback about the app, we disabled the verification function for you to explore the Service Provider Mode.")
-                .setCancelable(true)
-                .setPositiveButton("Got it", DialogInterface.OnClickListener { _, _ ->
-                    changeMode(switch.isChecked)
-                })
-        val alert = dialogBuilder.create()
-        alert.setTitle("Read Me")
-        alert.show()
 
-    }
-
-    private fun checkIfVerified() {
-        val currentUserUid = FirebaseAuth.getInstance().currentUser!!.uid
-        if (currentUserUid != null) {
-            val ref = FirebaseDatabase.getInstance().getReference("users/$currentUserUid")
-            ref.addListenerForSingleValueEvent(
-                    object : ValueEventListener {
-                        override fun onDataChange(snapshot: DataSnapshot) {
-                            val user = snapshot.getValue(User::class.java)
-                            if (user?.verified == "NOT_VERIFIED") {
-                                val dialog = VerifyDialog(this@ProfileFragment)
-                                dialog.showDialog()
-                                switch.isChecked = false
-                            } else if (user?.verified == "VERIFIED") {
-                                changeMode(switch.isChecked)
-
-                            } else if (user?.verified == "PENDING") {
-                                val snackbar = Snackbar.make(bottomNavigationBuyer, "Replace requirements sent.", Snackbar.LENGTH_LONG)
-                                snackbar.setAction("REPLACE", View.OnClickListener {
-                                    snackbar.dismiss()
-                                    val intent = Intent1(v.context, SendRequirementActivity::class.java)
-                                    startActivity(intent)
-
-                                })
-                                snackbar.show()
-                                switch.isChecked = false
-                            } else if (user?.verified == "TRY_AGAIN") {
-                                val snackbar = Snackbar.make(bottomNavigationBuyer, "Your request for verification wasn't approved by the Admin.", Snackbar.LENGTH_LONG)
-                                snackbar.setAction("RESEND APPLICATION", View.OnClickListener {
-                                    snackbar.dismiss()
-                                    val intent = Intent1(v.context, SendRequirementActivity::class.java)
-                                    startActivity(intent)
-
-                                })
-                                snackbar.show()
-                                switch.isChecked = false
-
-                            }
-                        }
-
-                        override fun onCancelled(error: DatabaseError) {
-                        }
-
-                    })
-        }
-
-    }
-
-    //Change the mode based from the switch view
-    private fun changeMode(state: Boolean) {
-        if (state == true) {
-            val intent = Intent1(this.context, SellerActivity::class.java)
-            intent.flags = android.content.Intent.FLAG_ACTIVITY_CLEAR_TASK.or(android.content.Intent.FLAG_ACTIVITY_NEW_TASK)
-            startActivity(intent)
-            isBuyerMode = false
-            switch.isChecked = false
-            Toast.makeText(v.context, "Switched to Service Provider Mode", Toast.LENGTH_LONG).show()
-        }
-    }
 
     override fun onResume() {
         super.onResume()

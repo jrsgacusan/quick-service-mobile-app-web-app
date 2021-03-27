@@ -127,7 +127,7 @@ class LoginActivity : AppCompatActivity() {
     private fun updateUI(currentUser: FirebaseUser?) {
         if (currentUser != null) {
             if (currentUser.isEmailVerified) {
-                val intent = Intent(this, BuyerActivity::class.java)
+                val intent = Intent(this, ChooseActivity::class.java)
                 intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
                 startActivity(intent)
                 Toast.makeText(baseContext, "Signed in",

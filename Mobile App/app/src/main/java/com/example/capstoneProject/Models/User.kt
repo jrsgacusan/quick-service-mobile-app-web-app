@@ -16,6 +16,8 @@ class User(var uid: String? = "",
            var age: Int? = 18,
            var profileImageUrl: String? = "${SignUpAcitivity.DEFAULT_IMG_URL}",
            var bio: String? = "",
-           var verified: String? = "NOT_VERIFIED"
+           var verifiedClient: String? = "NOT_VERIFIED",
+           var verifiedServiceProvider: String? = "NOT_VERIFIED",
 
-) : Parcelable
+
+           ) : Parcelable

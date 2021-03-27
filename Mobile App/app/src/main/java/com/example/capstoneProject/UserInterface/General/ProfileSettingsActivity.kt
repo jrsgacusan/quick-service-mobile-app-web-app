@@ -14,7 +14,6 @@ import androidx.core.view.isVisible
 import com.example.capstoneProject.UserInterface.Buyer.BuyerActivity
 import com.example.capstoneProject.UserInterface.Dialogs.LoadingDialog
 import com.example.capstoneProject.Handlers.UserHandler
-import com.example.capstoneProject.Models.ServiceRequest
 import com.example.capstoneProject.Models.User
 import com.example.capstoneProject.R
 import com.example.capstoneProject.UserInterface.ServiceProvider.SellerActivity
@@ -234,7 +233,8 @@ class ProfileSettingsActivity : AppCompatActivity() {
                         lastName = lastNameProfileEditText.text.toString(),
                         age = ageEditText.text.toString().toInt(),
                         mobileNumber = mobileNumberEditText.text.toString(),
-                        verified = user.verified
+                        verifiedClient = user.verifiedClient,
+                        verifiedServiceProvider =  user.verifiedServiceProvider
                 )
                 if (userHandler.update(insertUser)) {
                     Toast.makeText(applicationContext, "Account info updated", Toast.LENGTH_SHORT).show()
