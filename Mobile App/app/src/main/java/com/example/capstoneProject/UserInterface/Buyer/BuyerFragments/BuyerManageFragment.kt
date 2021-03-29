@@ -60,7 +60,7 @@ class BuyerManageFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        (activity as BuyerActivity?)?.setActionBarTitle("Manage Orders")
+        (activity as BuyerActivity?)?.setActionBarTitle("Manage Bookings")
         bottomNavigationBuyer.menu.findItem(R.id.notifications).isChecked = true
     }
 

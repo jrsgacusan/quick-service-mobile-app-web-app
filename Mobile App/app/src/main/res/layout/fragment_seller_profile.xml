@@ -172,7 +172,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|clip_horizontal|center|clip_vertical"
                 android:padding="10dp"
-                android:text="Buyers Request"
+                android:text="Client Request"
                 android:textAlignment="center" />
         </androidx.cardview.widget.CardView>
 

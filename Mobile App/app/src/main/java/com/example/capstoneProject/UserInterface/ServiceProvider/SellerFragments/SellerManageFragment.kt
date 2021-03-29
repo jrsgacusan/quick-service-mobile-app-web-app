@@ -65,7 +65,7 @@ class SellerManageFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        (activity as SellerActivity?)?.setActionBarTitle("Manage Orders")
+        (activity as SellerActivity?)?.setActionBarTitle("Manage Bookings")
         bottomNavigationSeller.menu.findItem(R.id.Seller_manageOrdersPage).isChecked = true
     }
 
